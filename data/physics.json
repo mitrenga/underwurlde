@@ -1,0 +1,671 @@
+{
+ "note": "M3: fyzika Sabremana vytazena z originalu (tools/dumpphysics.py). Kazda hodnota je operand skutecne instrukce v build/underwurlde-run.bin, adresa je v \"source\". Popis rutin: sources/docs/disasm_notes.md 13.",
+ "stepRate": "jeden herni krok = jeden snimek ULA (50,08 Hz); pomale pocitadlo $8ED6 tika jen pri plnem prubehu hlavni smycky",
+ "measured": {
+  "slowCounterFrames": 2,
+  "note": "Odmereno na behu originalu (tools/tracephysics.py): pocitadlo $8ED6, na kterem visi faze kotoulu, tlumeni kyvu lana a krok entity lana, tika jednou za 1,6 az 3,2 snimku podle toho, co hra kresli (vazeny prumer 2,2). V remaku je to kazdy druhy tik - je to casovani Z80, ne pravidlo hry, a patri k porovnani v M7."
+ },
+ "values": {
+  "walkStep": 2,
+  "walkStepLeft": 254,
+  "walkPoseLeft": 9,
+  "walkPoseRight": 13,
+  "poseHold": 3,
+  "sideMaskHigh": 68,
+  "topWallsY": 72,
+  "jumpVelocity": 208,
+  "crouchFrames": 8,
+  "crouchPoseLeft": 17,
+  "crouchPoseStep": 3,
+  "stepOffVelocity": 192,
+  "jumpLiftoff": 4,
+  "jumpFrames": 12,
+  "jumpPose": 21,
+  "gravity": 118,
+  "gravityJump": 76,
+  "deathVelocity": 116,
+  "fallPoseBase": 24,
+  "fallPoseMask": 3,
+  "floorY": 159,
+  "ceilingY": 72,
+  "ceilingClampY": 72,
+  "wallLeftWalk": 24,
+  "wallRightWalk": 216,
+  "wallRightJump": 208,
+  "wallRightFall": 207,
+  "exitLeftX": 8,
+  "enterRightX": 240,
+  "exitRightX": 241,
+  "enterLeftX": 8,
+  "enterLeftXFall": 231,
+  "exitTopY": 40,
+  "enterBottomY": 186,
+  "exitBottomY": 188,
+  "enterTopYJump": 42,
+  "enterTopYFall": 44,
+  "bounceFrames": 20,
+  "bouncePose": 24,
+  "standBounceVel": 192,
+  "landPose": 9,
+  "throwFrames": 26,
+  "throwVelocity": 32,
+  "deathPose": 62,
+  "deathFrames": 32,
+  "enemyReachX": 16,
+  "enemyGraze": 10,
+  "enemyReachY": 20,
+  "platformType": 88,
+  "platformReachX": 13,
+  "platformEdgeX": 10,
+  "platformReachY": 15,
+  "platformStandY": 14,
+  "platformSlots": 4,
+  "platformBase": 36698,
+  "platformIgnore": 48,
+  "obstacleBaseCastle": 36730,
+  "obstacleSlotsCastle": 4,
+  "obstacleBaseCave": 36762,
+  "obstacleSlotsCave": 2,
+  "ropeGrabRow": 16,
+  "ropeGrabX": 120,
+  "ropeGrabReach": 16,
+  "ropeLengthOffset": 55,
+  "ropeAnchorX": 128,
+  "ropeTipOffsetY": 24,
+  "ropeTipOffsetY2": 12,
+  "ropeHandX": 63500,
+  "ropeSwingDamp": 7,
+  "ropeAmplitude": 176,
+  "ropePumpLimit": 8,
+  "ropeMaxLength": 56,
+  "ropeMinLength": 32,
+  "ropeReleasePose": 21,
+  "ropeReleaseFrames": 32,
+  "ropeReleaseVel": 16,
+  "ropeKnockVel": 16,
+  "ropeLandPose": 9,
+  "ropeEntityType": 23,
+  "spawnRecord": [
+   9,
+   64,
+   9,
+   159,
+   14,
+   71,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   1
+  ],
+  "livesAddress": 36570,
+  "invincibleAddress": 36590,
+  "invincibleTick": 3,
+  "gravityPerStep": 2,
+  "velocityShift": 4,
+  "ropeSwingAccel": 4,
+  "ropeSwingScale": 32,
+  "ropePumpStep": 2,
+  "ropeClimbStep": 2,
+  "ropeFreeDecay": 2,
+  "ropePoseBase": 1
+ },
+ "source": {
+  "walkStep": {
+   "address": "$A55A",
+   "note": "LD (IX+$06),n \u2014 krok ch\u016fze vpravo v pixelech za hern\u00ed krok"
+  },
+  "walkStepLeft": {
+   "address": "$A57E",
+   "note": "LD (IX+$06),n \u2014 krok ch\u016fze vlevo (dvojkov\u00fd dopln\u011bk)"
+  },
+  "walkPoseLeft": {
+   "address": "$A58B",
+   "note": "ADD A,n \u2014 prvn\u00ed typ ze \u010dty\u0159 p\u00f3z ch\u016fze vlevo"
+  },
+  "walkPoseRight": {
+   "address": "$A567",
+   "note": "ADD A,n \u2014 prvn\u00ed typ ze \u010dty\u0159 p\u00f3z ch\u016fze vpravo"
+  },
+  "poseHold": {
+   "address": "$A564",
+   "note": "RRA/AND n \u2014 f\u00e1ze ch\u016fze = (po\u010d\u00edtadlo>>1)&n, tedy dva sn\u00edmky na p\u00f3zu"
+  },
+  "sideMaskHigh": {
+   "address": "$A44D",
+   "note": "LD (IX+$0B),n \u2014 nad hranic\u00ed `topWallsY` plat\u00ed bo\u010dn\u00ed st\u011bny za uzav\u0159en\u00e9"
+  },
+  "topWallsY": {
+   "address": "$A449",
+   "note": "CP n \u2014 nad touto \u0159\u00e1dkou se m\u00edstnost do stran neopou\u0161t\u00ed"
+  },
+  "jumpVelocity": {
+   "address": "$A596",
+   "note": "LD (IX+$09),n \u2014 svisl\u00e1 rychlost skoku v 1/16 px za krok (znam\u00e9nkov\u011b)"
+  },
+  "crouchFrames": {
+   "address": "$A59A",
+   "note": "LD (IX+$0A),n \u2014 kolik krok\u016f trv\u00e1 pokr\u010den\u00ed p\u0159ed odskokem"
+  },
+  "crouchPoseLeft": {
+   "address": "$A5A6",
+   "note": "ADD A,n \u2014 typ pokr\u010den\u00ed (vlevo); +2 je vpravo, +1 druh\u00e1 f\u00e1ze"
+  },
+  "crouchPoseStep": {
+   "address": "$A610",
+   "note": "CP n \u2014 p\u0159i t\u00e9to hodnot\u011b po\u010d\u00edtadla se pokr\u010den\u00ed p\u0159ekresl\u00ed druhou f\u00e1z\u00ed"
+  },
+  "stepOffVelocity": {
+   "address": "$A5C3",
+   "note": "LD (IX+$09),n \u2014 odskok, kdy\u017e se stoj\u00ed nad pr\u00e1zdnem (m\u00edstnost bez podlahy)"
+  },
+  "jumpLiftoff": {
+   "address": "$A65C",
+   "note": "SUB n \u2014 o kolik px se Sabreman posune vzh\u016fru v okam\u017eiku odskoku"
+  },
+  "jumpFrames": {
+   "address": "$A66E",
+   "note": "LD (IX+$0A),n \u2014 kolik krok\u016f po odskoku se nekontroluje chycen\u00ed lana"
+  },
+  "jumpPose": {
+   "address": "$A64C",
+   "note": "ADD A,n \u2014 typ p\u00f3zy skoku (vlevo); +1 vpravo"
+  },
+  "gravity": {
+   "address": "$A9F5",
+   "note": "CP n \u2014 strop rychlosti p\u00e1du (1/16 px za krok) v rutin\u011b p\u00e1du"
+  },
+  "gravityJump": {
+   "address": "$A785",
+   "note": "CP n \u2014 strop rychlosti b\u011bhem skoku, ni\u017e\u0161\u00ed ne\u017e p\u0159i voln\u00e9m p\u00e1du"
+  },
+  "deathVelocity": {
+   "address": "$A8AD",
+   "note": "CP n \u2014 od t\u00e9to svisl\u00e9 rychlosti p\u0159i dopadu Sabreman um\u00edr\u00e1"
+  },
+  "fallPoseBase": {
+   "address": "$A9A4",
+   "note": "ADD A,n \u2014 prvn\u00ed ze \u010dty\u0159 typ\u016f p\u00e1du (kotoul)"
+  },
+  "fallPoseMask": {
+   "address": "$A9A1",
+   "note": "RRA/AND n \u2014 f\u00e1ze kotoulu = (po\u010d\u00edtadlo hry>>1)&n"
+  },
+  "floorY": {
+   "address": "$A79F",
+   "note": "CP n \u2014 pixelov\u00e1 \u0159\u00e1dka podlahy (spodn\u00ed bod spritu)"
+  },
+  "ceilingY": {
+   "address": "$A7B5",
+   "note": "CP n \u2014 pod touto \u0159\u00e1dkou u\u017e strop nebr\u00e1n\u00ed; nad n\u00ed se odr\u00e1\u017e\u00ed"
+  },
+  "ceilingClampY": {
+   "address": "$A7CC",
+   "note": "LD A,n \u2014 na tuhle \u0159\u00e1dku se hr\u00e1\u010d zar\u00e1\u017e\u00ed o uzav\u0159en\u00fd strop"
+  },
+  "wallLeftWalk": {
+   "address": "$A507",
+   "note": "LD (IX+$01),n \u2014 o levou st\u011bnu se ch\u016fze zar\u00e1\u017e\u00ed tady"
+  },
+  "wallRightWalk": {
+   "address": "$A531",
+   "note": "LD (IX+$01),n \u2014 o pravou st\u011bnu se ch\u016fze zar\u00e1\u017e\u00ed tady"
+  },
+  "wallRightJump": {
+   "address": "$A681",
+   "note": "LD (IX+$01),n \u2014 ve skoku je odraz od prav\u00e9 st\u011bny o 8 px d\u0159\u00edv"
+  },
+  "wallRightFall": {
+   "address": "$A900",
+   "note": "LD (IX+$01),n \u2014 v p\u00e1du je\u0161t\u011b o 1 px d\u0159\u00edv"
+  },
+  "exitLeftX": {
+   "address": "$A50E",
+   "note": "CP n \u2014 pod t\u00edmhle x se p\u0159ech\u00e1z\u00ed do m\u00edstnosti vlevo"
+  },
+  "enterRightX": {
+   "address": "$A513",
+   "note": "LD (IX+$01),n \u2014 na t\u00e9hle x se vstupuje z prav\u00e9 strany"
+  },
+  "exitRightX": {
+   "address": "$A538",
+   "note": "CP n \u2014 nad t\u00edmhle x se p\u0159ech\u00e1z\u00ed do m\u00edstnosti vpravo (ch\u016fze)"
+  },
+  "enterLeftX": {
+   "address": "$A53D",
+   "note": "LD (IX+$01),n \u2014 na t\u00e9hle x se vstupuje z lev\u00e9 strany"
+  },
+  "enterLeftXFall": {
+   "address": "$A9EB",
+   "note": "LD (IX+$01),n \u2014 v p\u00e1du se z lev\u00e9 strany vstupuje o 9 px d\u00e1l"
+  },
+  "exitTopY": {
+   "address": "$A7EE",
+   "note": "CP n \u2014 nad touhle \u0159\u00e1dkou se p\u0159ech\u00e1z\u00ed do m\u00edstnosti naho\u0159e"
+  },
+  "enterBottomY": {
+   "address": "$A7F5",
+   "note": "LD (IX+$03),n \u2014 na t\u00e9hle \u0159\u00e1dce se vstupuje zespodu"
+  },
+  "exitBottomY": {
+   "address": "$A86F",
+   "note": "CP n \u2014 pod touhle \u0159\u00e1dkou se p\u0159ech\u00e1z\u00ed do m\u00edstnosti dole"
+  },
+  "enterTopYJump": {
+   "address": "$A877",
+   "note": "LD (IX+$03),n \u2014 na t\u00e9hle \u0159\u00e1dce se vstupuje shora ve skoku"
+  },
+  "enterTopYFall": {
+   "address": "$AA32",
+   "note": "LD (IX+$03),n \u2014 a tady v p\u00e1du"
+  },
+  "bounceFrames": {
+   "address": "$E894",
+   "note": "LD (IX+$0A),n \u2014 tolik krok\u016f po kontaktu s nep\u0159\u00edtelem nem\u00e1 hr\u00e1\u010d kontrolu"
+  },
+  "bouncePose": {
+   "address": "$E89B",
+   "note": "LD (IX+$00),n \u2014 typ, do kter\u00e9ho odmr\u0161t\u011bn\u00ed p\u0159epne (kotoul)"
+  },
+  "standBounceVel": {
+   "address": "$A3FF",
+   "note": "LD (IX+$09),n \u2014 svisl\u00fd impuls odmr\u0161t\u011bn\u00ed, kdy\u017e st\u00e1l na zemi"
+  },
+  "landPose": {
+   "address": "$A8BD",
+   "note": "ADD A,n \u2014 typ p\u00f3zy po dopadu (vlevo), +4 vpravo"
+  },
+  "throwFrames": {
+   "address": "$E276",
+   "note": "LD (IX+$0A),n \u2014 kolik krok\u016f bez kontroly po odhozen\u00ed od p\u0159ek\u00e1\u017eky ($E272)"
+  },
+  "throwVelocity": {
+   "address": "$E27A",
+   "note": "LD (IX+$09),n \u2014 svisl\u00fd impuls p\u0159i odhozen\u00ed od p\u0159ek\u00e1\u017eky"
+  },
+  "deathPose": {
+   "address": "$E7D7",
+   "note": "ADD A,n \u2014 prvn\u00ed typ animace smrti (druh\u00fd je +1)"
+  },
+  "deathFrames": {
+   "address": "$E7DC",
+   "note": "LD (IX+$0A),n \u2014 jak dlouho le\u017e\u00ed, ne\u017e se ubere \u017eivot"
+  },
+  "enemyReachX": {
+   "address": "$E85B",
+   "note": "CP n \u2014 dosah nep\u0159\u00edtele vodorovn\u011b"
+  },
+  "enemyGraze": {
+   "address": "$E85E",
+   "note": "CP n \u2014 pod touhle vzd\u00e1lenost\u00ed je kontakt \u201enaplno\" (zab\u00edj\u00ed ve stoje)"
+  },
+  "enemyReachY": {
+   "address": "$E871",
+   "note": "CP n \u2014 dosah nep\u0159\u00edtele svisle"
+  },
+  "platformType": {
+   "address": "$E1C6",
+   "note": "AND $FC/CP n \u2014 typ entity, na kter\u00e9 se d\u00e1 st\u00e1t (bublina)"
+  },
+  "platformReachX": {
+   "address": "$E1E5",
+   "note": "CP n \u2014 vodorovn\u00fd dosah plo\u0161iny"
+  },
+  "platformEdgeX": {
+   "address": "$E1E9",
+   "note": "CP n \u2014 od t\u00e9hle vzd\u00e1lenosti se stoj\u00ed na hran\u011b plo\u0161iny"
+  },
+  "platformReachY": {
+   "address": "$E1FD",
+   "note": "CP n \u2014 svisl\u00fd dosah plo\u0161iny"
+  },
+  "platformStandY": {
+   "address": "$E212",
+   "note": "SUB n \u2014 o kolik px nad plo\u0161inou Sabreman stoj\u00ed"
+  },
+  "platformSlots": {
+   "address": "$E1C3",
+   "note": "LD B,n \u2014 kolik z\u00e1znam\u016f plo\u0161in se prohl\u00ed\u017e\u00ed"
+  },
+  "platformBase": {
+   "address": "$E1BD",
+   "note": "LD HL,nn \u2014 prvn\u00ed z\u00e1znam plo\u0161iny v tabulce entit"
+  },
+  "platformIgnore": {
+   "address": "$E1B9",
+   "note": "AND n \u2014 dokud je po\u010d\u00edtadlo bez kontroly takhle vysok\u00e9, plo\u0161iny se ignoruj\u00ed"
+  },
+  "obstacleBaseCastle": {
+   "address": "$B448",
+   "note": "LD IY,nn \u2014 prvn\u00ed z\u00e1znam p\u0159ek\u00e1\u017eky v hradu (\u0159\u00e1dky < 16)"
+  },
+  "obstacleSlotsCastle": {
+   "address": "$B44C",
+   "note": "LD B,n \u2014 kolik z\u00e1znam\u016f p\u0159ek\u00e1\u017eek se v hradu prohl\u00ed\u017e\u00ed"
+  },
+  "obstacleBaseCave": {
+   "address": "$B450",
+   "note": "LD IY,nn \u2014 prvn\u00ed z\u00e1znam p\u0159ek\u00e1\u017eky v jeskyni"
+  },
+  "obstacleSlotsCave": {
+   "address": "$B454",
+   "note": "LD B,n \u2014 kolik z\u00e1znam\u016f p\u0159ek\u00e1\u017eek se v jeskyni prohl\u00ed\u017e\u00ed"
+  },
+  "ropeGrabRow": {
+   "address": "$A802",
+   "note": "CP n \u2014 lana jsou jen od tohohle \u0159\u00e1dku m\u0159\u00ed\u017eky dol\u016f (jeskyn\u011b)"
+  },
+  "ropeGrabX": {
+   "address": "$A81B",
+   "note": "SUB n \u2014 lano vis\u00ed na t\u00e9hle x; chyt\u00e1 se do vzd\u00e1lenosti `ropeGrabReach`"
+  },
+  "ropeGrabReach": {
+   "address": "$A822",
+   "note": "CP n \u2014 jak bl\u00edzko mus\u00ed hr\u00e1\u010d b\u00fdt, aby lano chytil"
+  },
+  "ropeLengthOffset": {
+   "address": "$A7D1",
+   "note": "SUB n \u2014 d\u00e9lka lana p\u0159i chycen\u00ed = y - n"
+  },
+  "ropeAnchorX": {
+   "address": "$ABDF",
+   "note": "ADD A,n \u2014 x konce lana = v\u00fdchylka + n (st\u0159ed m\u00edstnosti)"
+  },
+  "ropeTipOffsetY": {
+   "address": "$ABD1",
+   "note": "ADD A,n \u2014 svisl\u00fd posun konce lana proti kotv\u011b"
+  },
+  "ropeTipOffsetY2": {
+   "address": "$ABD3",
+   "note": "ADD A,n \u2014 a druh\u00e1 \u010d\u00e1st t\u00e9ho\u017e posunu (spole\u010dn\u00e1 dlouh\u00fdm lan\u016fm)"
+  },
+  "ropeHandX": {
+   "address": "$A368",
+   "note": "LD DE,nn \u2014 poloha hr\u00e1\u010de = konec lana minus tohle (x -$0C, y +8)"
+  },
+  "ropeSwingDamp": {
+   "address": "$ABFE",
+   "note": "AND n \u2014 ka\u017ed\u00fd n-t\u00fd krok se zrychlen\u00ed ke st\u0159edu vynech\u00e1 (tlumen\u00ed)"
+  },
+  "ropeAmplitude": {
+   "address": "$AC2D",
+   "note": "LD DE,nn \u2014 mez v\u00fdchylky = d\u00e9lka * nn / 256"
+  },
+  "ropePumpLimit": {
+   "address": "$AACD",
+   "note": "CP n \u2014 rozhoup\u00e1vat se d\u00e1 jen do v\u00fdchylky min(d\u00e9lka>>3, n)"
+  },
+  "ropeMaxLength": {
+   "address": "$AA52",
+   "note": "CP n \u2014 na tuhle d\u00e9lku lano samo doroste (typ $17)"
+  },
+  "ropeMinLength": {
+   "address": "$AB36",
+   "note": "CP n \u2014 krat\u0161\u00ed ne\u017e tohle lano nejde vyt\u00e1hnout"
+  },
+  "ropeReleasePose": {
+   "address": "$A3BC",
+   "note": "LD A,n \u2014 po pu\u0161t\u011bn\u00ed lana typ skoku (vlevo), +1 vpravo"
+  },
+  "ropeReleaseFrames": {
+   "address": "$A3C9",
+   "note": "LD (IX+$0A),n \u2014 tolik krok\u016f po pu\u0161t\u011bn\u00ed lana se nechyt\u00e1 znovu"
+  },
+  "ropeReleaseVel": {
+   "address": "$A3D6",
+   "note": "LD (IX+$09),n \u2014 svisl\u00e1 rychlost, kdy\u017e se pust\u00ed ze stoj\u00edc\u00edho lana"
+  },
+  "ropeKnockVel": {
+   "address": "$A32D",
+   "note": "LD B,n \u2014 svisl\u00fd impuls, kdy\u017e hr\u00e1\u010de na lanu n\u011bco tref\u00ed"
+  },
+  "ropeLandPose": {
+   "address": "$A8CD",
+   "note": "LD A,n \u2014 typ po dosednut\u00ed z lana (vlevo), +4 vpravo"
+  },
+  "ropeEntityType": {
+   "address": "$A8DA",
+   "note": "LD A,n \u2014 typ entity \u201elano bez hr\u00e1\u010de\""
+  },
+  "spawnRecord": {
+   "address": "$AA3C",
+   "note": "p\u0159edloha z\u00e1znamu Sabremana (typ, x, sloupec, y, \u0159\u00e1dek, atribut, ...)"
+  },
+  "livesAddress": {
+   "address": "$E7EC",
+   "note": "LD A,(nn) \u2014 bajt se z\u00e1sobou \u017eivot\u016f (BCD)"
+  },
+  "invincibleAddress": {
+   "address": "$E83B",
+   "note": "LD A,(nn) \u2014 bajt odpo\u010dtu nezranitelnosti po drahokamu"
+  },
+  "invincibleTick": {
+   "address": "$948E",
+   "note": "AND n \u2014 odpo\u010det nezranitelnosti ub\u00fdv\u00e1 ka\u017ed\u00fd n+1-t\u00fd krok ($948B)"
+  },
+  "gravityPerStep": {
+   "address": "$A78E, $AA00",
+   "note": "INC (IX+$09) 2x \u2014 zrychlen\u00ed v 1/16 px za krok"
+  },
+  "velocityShift": {
+   "address": "$A794, $AA06",
+   "note": "SRA A 4x \u2014 svisl\u00fd posun = rychlost>>4 (dol\u016f zaokrouhleno)"
+  }
+ },
+ "poses": [
+  {
+   "state": "rope",
+   "firstType": 1,
+   "types": 8,
+   "note": "na lanu, \u010dty\u0159i f\u00e1ze podle x, druh\u00e1 \u010dty\u0159ka je oto\u010den\u00e1",
+   "frames": [
+    {
+     "type": 1,
+     "frame": 0,
+     "address": "$C4F7"
+    },
+    {
+     "type": 2,
+     "frame": 1,
+     "address": "$C529"
+    },
+    {
+     "type": 3,
+     "frame": 2,
+     "address": "$C55B"
+    },
+    {
+     "type": 4,
+     "frame": 1,
+     "address": "$C529"
+    },
+    {
+     "type": 5,
+     "frame": 3,
+     "address": "$C6A7"
+    },
+    {
+     "type": 6,
+     "frame": 4,
+     "address": "$C6D9"
+    },
+    {
+     "type": 7,
+     "frame": 5,
+     "address": "$C70B"
+    },
+    {
+     "type": 8,
+     "frame": 4,
+     "address": "$C6D9"
+    }
+   ]
+  },
+  {
+   "state": "walkLeft",
+   "firstType": 9,
+   "types": 4,
+   "note": "ch\u016fze vlevo; typ $09 je i st\u00e1n\u00ed vlevo",
+   "frames": [
+    {
+     "type": 9,
+     "frame": 6,
+     "address": "$C3DD"
+    },
+    {
+     "type": 10,
+     "frame": 7,
+     "address": "$C40B"
+    },
+    {
+     "type": 11,
+     "frame": 8,
+     "address": "$C439"
+    },
+    {
+     "type": 12,
+     "frame": 7,
+     "address": "$C40B"
+    }
+   ]
+  },
+  {
+   "state": "walkRight",
+   "firstType": 13,
+   "types": 4,
+   "note": "ch\u016fze vpravo; typ $0D je i st\u00e1n\u00ed vpravo",
+   "frames": [
+    {
+     "type": 13,
+     "frame": 9,
+     "address": "$C58D"
+    },
+    {
+     "type": 14,
+     "frame": 10,
+     "address": "$C5BB"
+    },
+    {
+     "type": 15,
+     "frame": 11,
+     "address": "$C5E9"
+    },
+    {
+     "type": 16,
+     "frame": 10,
+     "address": "$C5BB"
+    }
+   ]
+  },
+  {
+   "state": "crouch",
+   "firstType": 17,
+   "types": 4,
+   "note": "pokr\u010den\u00ed p\u0159ed odskokem ($11/$12 vlevo, $13/$14 vpravo)",
+   "frames": [
+    {
+     "type": 17,
+     "frame": 12,
+     "address": "$C467"
+    },
+    {
+     "type": 18,
+     "frame": 13,
+     "address": "$C491"
+    },
+    {
+     "type": 19,
+     "frame": 14,
+     "address": "$C617"
+    },
+    {
+     "type": 20,
+     "frame": 15,
+     "address": "$C641"
+    }
+   ]
+  },
+  {
+   "state": "jump",
+   "firstType": 21,
+   "types": 2,
+   "note": "skok ($15 vlevo, $16 vpravo)",
+   "frames": [
+    {
+     "type": 21,
+     "frame": 16,
+     "address": "$C4C5"
+    },
+    {
+     "type": 22,
+     "frame": 17,
+     "address": "$C675"
+    }
+   ]
+  },
+  {
+   "state": "ropeIdle",
+   "firstType": 23,
+   "types": 1,
+   "note": "lano bez hr\u00e1\u010de (entita, ne Sabreman)",
+   "frames": [
+    {
+     "type": 23,
+     "frame": null,
+     "address": "$C3DB"
+    }
+   ]
+  },
+  {
+   "state": "fall",
+   "firstType": 24,
+   "types": 4,
+   "note": "p\u00e1d a odmr\u0161t\u011bn\u00ed \u2013 kotoul, f\u00e1ze z po\u010d\u00edtadla hry",
+   "frames": [
+    {
+     "type": 24,
+     "frame": 18,
+     "address": "$C73D"
+    },
+    {
+     "type": 25,
+     "frame": 19,
+     "address": "$C76F"
+    },
+    {
+     "type": 26,
+     "frame": 20,
+     "address": "$C798"
+    },
+    {
+     "type": 27,
+     "frame": 21,
+     "address": "$C7CA"
+    }
+   ]
+  },
+  {
+   "state": "death",
+   "firstType": 62,
+   "types": 2,
+   "note": "animace smrti",
+   "frames": [
+    {
+     "type": 62,
+     "frame": 49,
+     "address": "$DCBF"
+    },
+    {
+     "type": 63,
+     "frame": 50,
+     "address": "$DC96"
+    }
+   ]
+  }
+ ]
+}

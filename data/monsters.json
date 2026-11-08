@@ -1,0 +1,1409 @@
+{
+ "note": "M5: chovani nepratel, zbrani, projektilu a strazcu plus bodovani, vytazene z obrazu hry (tools/dumpmonsters.py). Kazda konstanta je operand skutecne instrukce.",
+ "values": {
+  "genPeriodMask": 7,
+  "genSlotBase": 36826,
+  "genSlotCount": 4,
+  "genEaglesFlag": 36601,
+  "genEagleBit": 16,
+  "genTypeMask": 20,
+  "genTypeBase": 48,
+  "genSideXMask": 127,
+  "genSideXBase": 72,
+  "genYMask": 63,
+  "genYBase": 64,
+  "genAttrMask": 23672,
+  "genAttrAnd": 3,
+  "genAttrBase": 66,
+  "genRightXMask": 63,
+  "genRightXBase": 64,
+  "eagleTypeMask": 252,
+  "eagleType": 48,
+  "grabXMax": 208,
+  "grabXMin": 24,
+  "grabYMax": 168,
+  "grabYMin": 65,
+  "grabPlayerMin": 9,
+  "grabContactMask": 6,
+  "grabContactValue": 4,
+  "carryingType": 92,
+  "carriedFlag": 64,
+  "phaseCounter": 36566,
+  "chaseAccel": 2,
+  "chaseSpeedCap": 64,
+  "chaseDecel": 2,
+  "chaseSpeedFloor": 192,
+  "flyXMax": 208,
+  "flyXClampRight": 207,
+  "flyXMin": 24,
+  "flyXClampLeft": 24,
+  "flyEdgeLeft": 8,
+  "flyEnterRight": 208,
+  "flyEdgeRight": 231,
+  "flyEnterLeft": 24,
+  "flyYMax": 159,
+  "flyYClampFloor": 159,
+  "flyYMin": 76,
+  "flyYClampTop": 76,
+  "flyEdgeTop": 42,
+  "flyEnterBottom": 144,
+  "flyEdgeBottom": 191,
+  "flyEnterTop": 64,
+  "sideMaskX": 238,
+  "sideMaskY": 187,
+  "sideMaskSetX": 17,
+  "sideMaskSetY": 68,
+  "approachAccel": 2,
+  "approachCap": 49,
+  "approachXMax": 208,
+  "approachEnterLeft": 8,
+  "approachXMin": 24,
+  "approachEnterRight": 223,
+  "approachYMinRoom": 64,
+  "approachYClampTop": 64,
+  "approachYSink": 128,
+  "approachYStep": 2,
+  "approachYMax": 159,
+  "approachEnterTop": 44,
+  "approachYMinV": 64,
+  "approachEnterBottom": 191,
+  "approachXClampMin": 24,
+  "approachXClampLeft": 24,
+  "approachXClampMax": 224,
+  "approachXClampRight": 224,
+  "wanderMask": 64,
+  "wanderOr": 32,
+  "wanderSub": 64,
+  "gargoyleCap": 33,
+  "gargoyleSpeedRight": 48,
+  "gargoyleSpeedLeft": 208,
+  "phaseWrap": 6,
+  "phaseMask": 3,
+  "phaseTypeMask": 252,
+  "carriedSlots": 36587,
+  "carriedCount": 3,
+  "weaponTypeMask": 252,
+  "weaponTypeBase": 104,
+  "shotSlot0": 36602,
+  "shotSlot1": 36618,
+  "fireRateMask": 7,
+  "shotCopyBytes": 6,
+  "shotSpeedMask": 127,
+  "shotSpeedOr": 64,
+  "projectileTable": 46931,
+  "shotPoseLimit": 21,
+  "shotPoseHigh": 2,
+  "shotFacingMask": 4,
+  "shotXOffset": 8,
+  "shotYOffset": 8,
+  "shotVyMask": 127,
+  "shotPhaseMask": 3,
+  "shotPhaseTypeMask": 252,
+  "shotBounceY": 160,
+  "shotGravity": 4,
+  "shotGravityCap": 120,
+  "shotXMax": 216,
+  "shotXClampRight": 215,
+  "shotXMin": 24,
+  "shotXClampLeft": 24,
+  "shotEdgeLeft": 8,
+  "shotEdgeRight": 240,
+  "shotYMax": 159,
+  "shotYClampFloor": 159,
+  "shotYMin": 64,
+  "shotYClampTop": 64,
+  "shotEdgeTop": 32,
+  "shotEdgeBottom": 191,
+  "splashSlot": 36682,
+  "splashType": 74,
+  "splashPhase": 4,
+  "hitWallType": 72,
+  "hitWallSteps": 4,
+  "puffPhaseMask": 1,
+  "puffTypeMask": 254,
+  "deathPhaseMask": 3,
+  "deathTypeMask": 252,
+  "deathType": 76,
+  "deathSteps": 9,
+  "hitSlot0": 36602,
+  "hitSlot1": 36618,
+  "hitOffset": 4,
+  "hitWindowX": 16,
+  "hitOffsetY": 4,
+  "hitWindowY": 16,
+  "carriedPlayerType": 96,
+  "carryLatch": 36593,
+  "carryDrop": 16,
+  "carryReleaseType": 24,
+  "carryReleaseVy": 16,
+  "carryCap": 56,
+  "carryTargetX": 127,
+  "carryTargetXBase": 64,
+  "carryTargetYMask": 31,
+  "carryTargetYBase": 76,
+  "carryCapX": 56,
+  "carryFloorX": 208,
+  "carryCapY": 56,
+  "carryFloorY": 199,
+  "carryXMax": 208,
+  "carryXClampRight": 207,
+  "carryXMin": 24,
+  "carryXClampLeft": 24,
+  "carryEdgeLeft": 8,
+  "carryEnterRight": 231,
+  "carryEdgeRight": 231,
+  "carryEnterLeft": 8,
+  "carryYMax": 159,
+  "carryYClampFloor": 159,
+  "carryYMin": 76,
+  "carryYClampTop": 76,
+  "carryEdgeTop": 40,
+  "carryEnterBottom": 168,
+  "carryPlayerBottom": 184,
+  "carryEdgeBottom": 175,
+  "carryEnterTop": 40,
+  "carryPlayerTop": 56,
+  "carryDropXMin": 24,
+  "carryDropXMax": 208,
+  "carryDropYMin": 72,
+  "carryDropYMax": 160,
+  "carryEagleType": 48,
+  "carryEagleVy": 240,
+  "takeKeyState": 36586,
+  "carryX": 136,
+  "carryY": 15,
+  "takeConsumed": 254,
+  "carryStep": 24,
+  "carryLimit": 200,
+  "carrySlotMask": 3,
+  "carrySlotMax": 3,
+  "dropFallStep": 16,
+  "dropMask": 15,
+  "dropFloor": 159,
+  "dropFloorClamp": 159,
+  "dropBelow": 191,
+  "dropSettle": 158,
+  "dropLandOffset": 161,
+  "guardianAnimMask": 1,
+  "guardianAnimBit": 1,
+  "guardianProjMin": 108,
+  "guardianPairMask": 3,
+  "guardianTypeShift": 3,
+  "guardianTable": 60918,
+  "guardianKilledFlag": 1,
+  "guardianKilledAt": 36601,
+  "guardianBounceFlag": 128,
+  "guardianBounceDx": 254,
+  "exitX": 120,
+  "exitY": 48,
+  "exitAttribute": 70,
+  "exitColumns": 4,
+  "exitStepX": 8,
+  "exitStepY": 24,
+  "exitRowBase": 136,
+  "exitSensorY": 144,
+  "contactAliveType": 29,
+  "contactReachX": 16,
+  "contactOffsetY": 4,
+  "contactReachY": 10,
+  "platformIgnore": 48,
+  "platformBase": 36698,
+  "platformSlots": 4,
+  "platformType": 88,
+  "platformReachX": 13,
+  "platformEdgeX": 10,
+  "platformReachY": 15,
+  "platformStandY": 14,
+  "obstacleRows": 16,
+  "obstacleBaseCastle": 36730,
+  "obstacleSlotsCastle": 4,
+  "obstacleBaseCave": 36762,
+  "obstacleSlotsCave": 2,
+  "obstacleExitType": 136,
+  "exitSensorSub": 102,
+  "exitSensorAdd": 8,
+  "exitSensorX": 128,
+  "carriedClampRight": 207,
+  "carriedClampLeft": 24,
+  "carriedFloor": 159,
+  "carriedLandOffset": 160,
+  "carriedPlantBit": 15,
+  "scoreLow": 36597,
+  "scoreDigits": 3,
+  "scorePanelAt": 48,
+  "scoreBase": 36595
+ },
+ "source": {
+  "genPeriodMask": {
+   "address": "$AFE2",
+   "note": "AND n \u2014 gener\u00e1tor b\u011b\u017e\u00ed jednou za (n+1) pr\u016fchod\u016f hlavn\u00ed smy\u010dky"
+  },
+  "genSlotBase": {
+   "address": "$AFE5",
+   "note": "LD HL,nn \u2014 prvn\u00ed ze \u010dty\u0159 slot\u016f, do kter\u00fdch nep\u0159\u00e1tel\u00e9 p\u0159ich\u00e1zej\u00ed"
+  },
+  "genSlotCount": {
+   "address": "$AFEB",
+   "note": "LD B,n \u2014 kolik slot\u016f gener\u00e1tor prohled\u00e1v\u00e1"
+  },
+  "genEaglesFlag": {
+   "address": "$AFF9",
+   "note": "LD A,(nn) \u2014 dokud je nula, orli nel\u00e9taj\u00ed (nastav\u00ed ji prvn\u00ed zabit\u00fd str\u00e1\u017ece)"
+  },
+  "genEagleBit": {
+   "address": "$B002",
+   "note": "OR n \u2014 bit typu, kter\u00fd se vynut\u00ed, dokud orli nel\u00e9taj\u00ed"
+  },
+  "genTypeMask": {
+   "address": "$B005",
+   "note": "AND n \u2014 z pomal\u00e9ho po\u010d\u00edtadla zbudou dva bity typu"
+  },
+  "genTypeBase": {
+   "address": "$B007",
+   "note": "ADD A,n \u2014 a k nim se p\u0159i\u010dte z\u00e1klad typu l\u00e9taj\u00edc\u00edho nep\u0159\u00edtele"
+  },
+  "genSideXMask": {
+   "address": "$B018",
+   "note": "AND n \u2014 x nep\u0159\u00edtele, kter\u00fd p\u0159ich\u00e1z\u00ed ze sousedn\u00ed m\u00edstnosti do strany"
+  },
+  "genSideXBase": {
+   "address": "$B01A",
+   "note": "ADD A,n \u2014 a jeho posun"
+  },
+  "genYMask": {
+   "address": "$B027",
+   "note": "AND n \u2014 y nep\u0159\u00edtele z FRAMES"
+  },
+  "genYBase": {
+   "address": "$B029",
+   "note": "ADD A,n \u2014 a jeho posun"
+  },
+  "genAttrMask": {
+   "address": "$B032",
+   "note": "LD A,(nn) \u2014 atribut se losuje z FRAMES"
+  },
+  "genAttrAnd": {
+   "address": "$B035",
+   "note": "AND n \u2014 dva bity atributu"
+  },
+  "genAttrBase": {
+   "address": "$B037",
+   "note": "ADD A,n \u2014 a jeho z\u00e1klad"
+  },
+  "genRightXMask": {
+   "address": "$B043",
+   "note": "AND n \u2014 x nep\u0159\u00edtele, kter\u00fd p\u0159ich\u00e1z\u00ed zprava"
+  },
+  "genRightXBase": {
+   "address": "$B045",
+   "note": "ADD A,n \u2014 a jeho posun"
+  },
+  "eagleTypeMask": {
+   "address": "$B099",
+   "note": "AND n \u2014 typ bez dvou bit\u016f f\u00e1ze"
+  },
+  "eagleType": {
+   "address": "$B09B",
+   "note": "CP n \u2014 jen orel hr\u00e1\u010de zvedne"
+  },
+  "grabXMax": {
+   "address": "$B0A8",
+   "note": "CP n \u2014 zvednout se d\u00e1 jen uvnit\u0159 m\u00edstnosti, ne u kraje"
+  },
+  "grabXMin": {
+   "address": "$B0AC",
+   "note": "CP n \u2014 a tot\u00e9\u017e zleva"
+  },
+  "grabYMax": {
+   "address": "$B0B3",
+   "note": "CP n \u2014 ani u podlahy"
+  },
+  "grabYMin": {
+   "address": "$B0B7",
+   "note": "CP n \u2014 ani u stropu"
+  },
+  "grabPlayerMin": {
+   "address": "$B0BE",
+   "note": "CP n \u2014 a Sabreman nesm\u00ed b\u00fdt na lan\u011b (typ pod t\u00edmhle)"
+  },
+  "grabContactMask": {
+   "address": "$B0C6",
+   "note": "AND n \u2014 ze senzoru $E285 se berou tyhle bity"
+  },
+  "grabContactValue": {
+   "address": "$B0C8",
+   "note": "CP n \u2014 a mus\u00ed vyj\u00edt tohle"
+  },
+  "carryingType": {
+   "address": "$B0CD",
+   "note": "LD (IX+0),n \u2014 orel, kter\u00fd nese hr\u00e1\u010de"
+  },
+  "carriedFlag": {
+   "address": "$B0D1",
+   "note": "LD A,n \u2014 p\u0159\u00edznak, kter\u00fdm se Sabremanovi \u0159ekne, \u017ee ho n\u011bkdo nese"
+  },
+  "phaseCounter": {
+   "address": "$B0E4",
+   "note": "LD A,(nn) \u2014 pomal\u00e9 po\u010d\u00edtadlo, ze kter\u00e9ho jde animace k\u0159\u00eddel"
+  },
+  "chaseAccel": {
+   "address": "$B10C",
+   "note": "ADD A,n \u2014 zrychlen\u00ed sm\u011brem k hr\u00e1\u010di, 1/16 px za krok"
+  },
+  "chaseSpeedCap": {
+   "address": "$B112",
+   "note": "CP n \u2014 a jeho strop"
+  },
+  "chaseDecel": {
+   "address": "$B218",
+   "note": "SUB n \u2014 a tot\u00e9\u017e na druhou stranu"
+  },
+  "chaseSpeedFloor": {
+   "address": "$B21F",
+   "note": "CP n \u2014 strop z\u00e1porn\u00e9 rychlosti (dvojkov\u00fd dopln\u011bk)"
+  },
+  "flyXMax": {
+   "address": "$B1D2",
+   "note": "CP n \u2014 u prav\u00e9 st\u011bny se odraz\u00ed"
+  },
+  "flyXClampRight": {
+   "address": "$B1E2",
+   "note": "LD A,n \u2014 a z\u016fstane tady"
+  },
+  "flyXMin": {
+   "address": "$B236",
+   "note": "CP n \u2014 u lev\u00e9 st\u011bny se odraz\u00ed"
+  },
+  "flyXClampLeft": {
+   "address": "$B246",
+   "note": "LD A,n \u2014 a z\u016fstane tady"
+  },
+  "flyEdgeLeft": {
+   "address": "$B24B",
+   "note": "CP n \u2014 pod t\u00edmhle p\u0159ejde do m\u00edstnosti vlevo"
+  },
+  "flyEnterRight": {
+   "address": "$B252",
+   "note": "LD (IX+1),n \u2014 a objev\u00ed se u jej\u00edho prav\u00e9ho okraje"
+  },
+  "flyEdgeRight": {
+   "address": "$B25E",
+   "note": "CP n \u2014 nad t\u00edmhle p\u0159ejde do m\u00edstnosti vpravo"
+  },
+  "flyEnterLeft": {
+   "address": "$B265",
+   "note": "LD (IX+1),n \u2014 a objev\u00ed se u jej\u00edho lev\u00e9ho okraje"
+  },
+  "flyYMax": {
+   "address": "$B200",
+   "note": "CP n \u2014 podlaha m\u00edstnosti"
+  },
+  "flyYClampFloor": {
+   "address": "$B210",
+   "note": "LD A,n \u2014 a odraz od n\u00ed"
+  },
+  "flyYMin": {
+   "address": "$B282",
+   "note": "CP n \u2014 strop m\u00edstnosti"
+  },
+  "flyYClampTop": {
+   "address": "$B292",
+   "note": "LD A,n \u2014 a odraz od n\u011bj"
+  },
+  "flyEdgeTop": {
+   "address": "$B297",
+   "note": "CP n \u2014 pod t\u00edmhle p\u0159ejde do m\u00edstnosti nad"
+  },
+  "flyEnterBottom": {
+   "address": "$B29E",
+   "note": "LD (IX+3),n \u2014 a objev\u00ed se u jej\u00ed podlahy"
+  },
+  "flyEdgeBottom": {
+   "address": "$B2AA",
+   "note": "CP n \u2014 nad t\u00edmhle p\u0159ejde do m\u00edstnosti pod"
+  },
+  "flyEnterTop": {
+   "address": "$B2B1",
+   "note": "LD (IX+3),n \u2014 a objev\u00ed se u jej\u00edho stropu"
+  },
+  "sideMaskX": {
+   "address": "$B1BC",
+   "note": "AND n \u2014 p\u0159ed vodorovn\u00fdm krokem se maska stran o\u0159\u00edzne"
+  },
+  "sideMaskY": {
+   "address": "$B1EA",
+   "note": "AND n \u2014 a p\u0159ed svisl\u00fdm taky"
+  },
+  "sideMaskSetX": {
+   "address": "$B275",
+   "note": "OR n \u2014 nep\u0159\u00edtel u zav\u0159en\u00e9 strany si ji poznamen\u00e1"
+  },
+  "sideMaskSetY": {
+   "address": "$B2C1",
+   "note": "OR n \u2014 a tot\u00e9\u017e svisle"
+  },
+  "approachAccel": {
+   "address": "$B2E0",
+   "note": "ADD A,n \u2014 zrychlen\u00ed, kdy\u017e nep\u0159\u00edtel m\u00ed\u0159\u00ed k m\u00edstnosti hr\u00e1\u010de"
+  },
+  "approachCap": {
+   "address": "$B2E6",
+   "note": "CP n \u2014 a jeho strop"
+  },
+  "approachXMax": {
+   "address": "$B2FB",
+   "note": "CP n \u2014 za t\u00edmhle p\u0159ejde do m\u00edstnosti vpravo"
+  },
+  "approachEnterLeft": {
+   "address": "$B302",
+   "note": "LD A,n \u2014 a objev\u00ed se tady"
+  },
+  "approachXMin": {
+   "address": "$B33D",
+   "note": "CP n \u2014 pod t\u00edmhle p\u0159ejde do m\u00edstnosti vlevo"
+  },
+  "approachEnterRight": {
+   "address": "$B344",
+   "note": "LD A,n \u2014 a objev\u00ed se tady"
+  },
+  "approachYMinRoom": {
+   "address": "$B30A",
+   "note": "CP n \u2014 v ciz\u00ed m\u00edstnosti se dr\u017e\u00ed pod stropem"
+  },
+  "approachYClampTop": {
+   "address": "$B30E",
+   "note": "LD (IX+3),n \u2014 a to je ten strop"
+  },
+  "approachYSink": {
+   "address": "$B312",
+   "note": "CP n \u2014 a nad t\u00edmhle stoup\u00e1"
+  },
+  "approachYStep": {
+   "address": "$B315",
+   "note": "SUB n \u2014 o tolik za krok"
+  },
+  "approachYMax": {
+   "address": "$B384",
+   "note": "CP n \u2014 za t\u00edmhle p\u0159ejde do m\u00edstnosti pod"
+  },
+  "approachEnterTop": {
+   "address": "$B38B",
+   "note": "LD A,n \u2014 a objev\u00ed se tady"
+  },
+  "approachYMinV": {
+   "address": "$B3C6",
+   "note": "CP n \u2014 pod t\u00edmhle p\u0159ejde do m\u00edstnosti nad"
+  },
+  "approachEnterBottom": {
+   "address": "$B3CD",
+   "note": "LD A,n \u2014 a objev\u00ed se tady"
+  },
+  "approachXClampMin": {
+   "address": "$B393",
+   "note": "CP n \u2014 a vodorovn\u011b se dr\u017e\u00ed v m\u00edstnosti"
+  },
+  "approachXClampLeft": {
+   "address": "$B397",
+   "note": "LD (IX+1),n \u2014 lev\u00fd kraj"
+  },
+  "approachXClampMax": {
+   "address": "$B39B",
+   "note": "CP n \u2014 a prav\u00fd"
+  },
+  "approachXClampRight": {
+   "address": "$B39E",
+   "note": "LD (IX+1),n \u2014 prav\u00fd kraj"
+  },
+  "wanderMask": {
+   "address": "$EE9D",
+   "note": "AND n \u2014 u typ\u016f $34-$37 se sm\u011br nelosuje k hr\u00e1\u010di, ale z FRAMES"
+  },
+  "wanderOr": {
+   "address": "$EE9F",
+   "note": "OR n"
+  },
+  "wanderSub": {
+   "address": "$EEA1",
+   "note": "SUB n \u2014 v\u00fdsledek je \u00b1$20"
+  },
+  "gargoyleCap": {
+   "address": "$B404",
+   "note": "CP n \u2014 a jeho strop"
+  },
+  "gargoyleSpeedRight": {
+   "address": "$B411",
+   "note": "LD (IX+8),n \u2014 vodorovn\u00e1 rychlost doprava je pevn\u00e1"
+  },
+  "gargoyleSpeedLeft": {
+   "address": "$B418",
+   "note": "LD (IX+8),n \u2014 a doleva taky"
+  },
+  "phaseWrap": {
+   "address": "$B428",
+   "note": "CP n \u2014 animace m\u00e1 tolik krok\u016f, pak se vynuluje"
+  },
+  "phaseMask": {
+   "address": "$B431",
+   "note": "AND n \u2014 a z nich se ud\u011blaj\u00ed dva bity typu"
+  },
+  "phaseTypeMask": {
+   "address": "$B437",
+   "note": "AND n \u2014 kter\u00e9 se do typu vlo\u017e\u00ed"
+  },
+  "carriedSlots": {
+   "address": "$B4D7",
+   "note": "LD HL,nn \u2014 t\u0159i bajty s typy nesen\u00fdch zbran\u00ed"
+  },
+  "carriedCount": {
+   "address": "$B4DA",
+   "note": "LD B,n \u2014 kolik se jich nese"
+  },
+  "weaponTypeMask": {
+   "address": "$B4DD",
+   "note": "AND n \u2014 typ bez dvou bit\u016f f\u00e1ze"
+  },
+  "weaponTypeBase": {
+   "address": "$B4DF",
+   "note": "CP n \u2014 a z\u00e1klad typu zbran\u011b"
+  },
+  "shotSlot0": {
+   "address": "$B4E8",
+   "note": "LD A,(nn) \u2014 prvn\u00ed ze dvou slot\u016f pro projektil"
+  },
+  "shotSlot1": {
+   "address": "$B4EC",
+   "note": "LD A,(nn) \u2014 a druh\u00fd"
+  },
+  "fireRateMask": {
+   "address": "$B4F9",
+   "note": "AND n \u2014 dokud n\u011bjak\u00fd projektil let\u00ed, st\u0159\u00edl\u00ed se jen jednou za (n+1)"
+  },
+  "shotCopyBytes": {
+   "address": "$B50D",
+   "note": "LD BC,nn \u2014 kolik bajt\u016f se do projektilu op\u00ed\u0161e ze Sabremana"
+  },
+  "shotSpeedMask": {
+   "address": "$B51D",
+   "note": "AND n \u2014 vodorovn\u00e1 rychlost projektilu se losuje"
+  },
+  "shotSpeedOr": {
+   "address": "$B51F",
+   "note": "OR n \u2014 a m\u00e1 tohle za spodn\u00ed hranici"
+  },
+  "projectileTable": {
+   "address": "$B525",
+   "note": "LD DE,nn \u2014 tabulka projektil\u016f, index = typ zbran\u011b & 3"
+  },
+  "shotPoseLimit": {
+   "address": "$B533",
+   "note": "CP n \u2014 nad touhle p\u00f3zou se od n\u00ed ode\u010d\u00edt\u00e1 2, jinak 1"
+  },
+  "shotPoseHigh": {
+   "address": "$B4CD",
+   "note": "SUB n"
+  },
+  "shotFacingMask": {
+   "address": "$B53C",
+   "note": "AND n \u2014 bit p\u00f3zy, kter\u00fd dr\u017e\u00ed sm\u011br"
+  },
+  "shotXOffset": {
+   "address": "$B541",
+   "note": "ADD A,n \u2014 projektil vylet\u00ed o tolik vedle Sabremana"
+  },
+  "shotYOffset": {
+   "address": "$B556",
+   "note": "SUB n \u2014 a o tolik v\u00fd\u0161"
+  },
+  "shotVyMask": {
+   "address": "$B565",
+   "note": "AND n \u2014 svisl\u00e1 rychlost projektilu, z FRAMES posunut\u00fdch o dva bity"
+  },
+  "shotPhaseMask": {
+   "address": "$B580",
+   "note": "AND n \u2014 animace projektilu z pomal\u00e9ho po\u010d\u00edtadla"
+  },
+  "shotPhaseTypeMask": {
+   "address": "$B586",
+   "note": "AND n \u2014 a kam se v typu ulo\u017e\u00ed"
+  },
+  "shotBounceY": {
+   "address": "$B5B9",
+   "note": "LD A,n \u2014 po dopadu na n\u00e1bytek se od n\u011bj odraz\u00ed (A - v\u00fd\u0161ka)"
+  },
+  "shotGravity": {
+   "address": "$B5D4",
+   "note": "ADD A,n \u2014 projektil pad\u00e1"
+  },
+  "shotGravityCap": {
+   "address": "$B5DA",
+   "note": "CP n \u2014 a rychleji u\u017e ne"
+  },
+  "shotXMax": {
+   "address": "$B60B",
+   "note": "CP n \u2014 u prav\u00e9 st\u011bny"
+  },
+  "shotXClampRight": {
+   "address": "$B614",
+   "note": "LD (IX+1),n"
+  },
+  "shotXMin": {
+   "address": "$B658",
+   "note": "CP n \u2014 u lev\u00e9 st\u011bny"
+  },
+  "shotXClampLeft": {
+   "address": "$B661",
+   "note": "LD (IX+1),n"
+  },
+  "shotEdgeLeft": {
+   "address": "$B668",
+   "note": "CP n \u2014 pod t\u00edmhle projektil z m\u00edstnosti vylet\u00ed a zmiz\u00ed"
+  },
+  "shotEdgeRight": {
+   "address": "$B676",
+   "note": "CP n \u2014 a tot\u00e9\u017e vpravo"
+  },
+  "shotYMax": {
+   "address": "$B63D",
+   "note": "CP n \u2014 podlaha"
+  },
+  "shotYClampFloor": {
+   "address": "$B650",
+   "note": "LD A,n"
+  },
+  "shotYMin": {
+   "address": "$B695",
+   "note": "CP n \u2014 strop"
+  },
+  "shotYClampTop": {
+   "address": "$B6A5",
+   "note": "LD A,n"
+  },
+  "shotEdgeTop": {
+   "address": "$B6AA",
+   "note": "CP n \u2014 pod t\u00edmhle projektil zmiz\u00ed naho\u0159e"
+  },
+  "shotEdgeBottom": {
+   "address": "$B6B8",
+   "note": "CP n \u2014 a t\u00edmhle dole"
+  },
+  "splashSlot": {
+   "address": "$DEB8",
+   "note": "LD A,(nn) \u2014 slot, do kter\u00e9ho se ukl\u00e1d\u00e1 c\u00e1knut\u00ed projektilu"
+  },
+  "splashType": {
+   "address": "$DEC8",
+   "note": "LD A,n \u2014 a jeho typ"
+  },
+  "splashPhase": {
+   "address": "$DECD",
+   "note": "LD A,n"
+  },
+  "hitWallType": {
+   "address": "$DEDA",
+   "note": "LD (IX+0),n \u2014 projektil, kter\u00fd narazil do st\u011bny"
+  },
+  "hitWallSteps": {
+   "address": "$DEDE",
+   "note": "LD (IX+8),n \u2014 a jak dlouho je vid\u011bt"
+  },
+  "puffPhaseMask": {
+   "address": "$DF06",
+   "note": "AND n \u2014 animace n\u00e1razu"
+  },
+  "puffTypeMask": {
+   "address": "$DF0C",
+   "note": "AND n"
+  },
+  "deathPhaseMask": {
+   "address": "$DF33",
+   "note": "AND n \u2014 animace zabit\u00e9ho nep\u0159\u00edtele"
+  },
+  "deathTypeMask": {
+   "address": "$DF39",
+   "note": "AND n"
+  },
+  "deathType": {
+   "address": "$DF4D",
+   "note": "LD (IX+0),n \u2014 zabit\u00fd nep\u0159\u00edtel se p\u0159eklop\u00ed do v\u00fdbuchu"
+  },
+  "deathSteps": {
+   "address": "$DF51",
+   "note": "LD (IX+8),n \u2014 a ten trv\u00e1 tolik krok\u016f"
+  },
+  "hitSlot0": {
+   "address": "$B6E8",
+   "note": "LD HL,nn \u2014 senzor z\u00e1sahu proch\u00e1z\u00ed oba sloty projektil\u016f"
+  },
+  "hitSlot1": {
+   "address": "$B6F1",
+   "note": "LD HL,nn"
+  },
+  "hitOffset": {
+   "address": "$B6FF",
+   "note": "ADD A,n \u2014 vodorovn\u00fd posun okna z\u00e1sahu"
+  },
+  "hitWindowX": {
+   "address": "$B706",
+   "note": "CP n \u2014 a jeho \u0161\u00ed\u0159ka"
+  },
+  "hitOffsetY": {
+   "address": "$B714",
+   "note": "ADD A,n \u2014 svisl\u00fd posun"
+  },
+  "hitWindowY": {
+   "address": "$B71B",
+   "note": "CP n \u2014 a v\u00fd\u0161ka"
+  },
+  "carriedPlayerType": {
+   "address": "$B738",
+   "note": "LD (IX+0),n \u2014 Sabreman v pa\u0159\u00e1tech"
+  },
+  "carryLatch": {
+   "address": "$E2F2",
+   "note": "LD (nn),A \u2014 orel to hl\u00e1s\u00ed ka\u017ed\u00fd pr\u016fchod; kdy\u017e p\u0159estane, hr\u00e1\u010d spadne"
+  },
+  "carryDrop": {
+   "address": "$E2F8",
+   "note": "ADD A,n \u2014 hr\u00e1\u010d vis\u00ed o tolik pod orlem"
+  },
+  "carryReleaseType": {
+   "address": "$E60B",
+   "note": "LD (IX+0),n \u2014 a kdy\u017e ho pust\u00ed, pad\u00e1"
+  },
+  "carryReleaseVy": {
+   "address": "$E60F",
+   "note": "LD (IX+9),n \u2014 s touhle rychlost\u00ed"
+  },
+  "carryCap": {
+   "address": "$E33A",
+   "note": "CP n \u2014 a jeho strop"
+  },
+  "carryTargetX": {
+   "address": "$B742",
+   "note": "AND n \u2014 po odrazu si orel vylosuje nov\u00fd c\u00edl"
+  },
+  "carryTargetXBase": {
+   "address": "$B744",
+   "note": "ADD A,n"
+  },
+  "carryTargetYMask": {
+   "address": "$B74B",
+   "note": "AND n"
+  },
+  "carryTargetYBase": {
+   "address": "$B74D",
+   "note": "ADD A,n"
+  },
+  "carryCapX": {
+   "address": "$E33A",
+   "note": "CP n \u2014 strop vodorovn\u00e9 rychlosti orla, kter\u00fd nese hr\u00e1\u010de"
+  },
+  "carryFloorX": {
+   "address": "$E449",
+   "note": "CP n \u2014 a strop na druhou stranu (dvojkov\u00fd dopln\u011bk)"
+  },
+  "carryCapY": {
+   "address": "$E352",
+   "note": "CP n \u2014 a tot\u00e9\u017e svisle"
+  },
+  "carryFloorY": {
+   "address": "$E457",
+   "note": "CP n"
+  },
+  "carryXMax": {
+   "address": "$E3D4",
+   "note": "CP n \u2014 u prav\u00e9 st\u011bny se odraz\u00ed"
+  },
+  "carryXClampRight": {
+   "address": "$E3E7",
+   "note": "LD A,n"
+  },
+  "carryXMin": {
+   "address": "$E45F",
+   "note": "CP n \u2014 a u lev\u00e9"
+  },
+  "carryXClampLeft": {
+   "address": "$E472",
+   "note": "LD A,n"
+  },
+  "carryEdgeLeft": {
+   "address": "$E477",
+   "note": "CP n \u2014 pod t\u00edmhle odnese hr\u00e1\u010de do m\u00edstnosti vlevo"
+  },
+  "carryEnterRight": {
+   "address": "$E4F9",
+   "note": "LD A,n \u2014 a objev\u00ed se u jej\u00edho prav\u00e9ho okraje"
+  },
+  "carryEdgeRight": {
+   "address": "$E47E",
+   "note": "CP n \u2014 a nad t\u00edmhle doprava"
+  },
+  "carryEnterLeft": {
+   "address": "$E511",
+   "note": "LD A,n"
+  },
+  "carryYMax": {
+   "address": "$E405",
+   "note": "CP n \u2014 podlaha"
+  },
+  "carryYClampFloor": {
+   "address": "$E418",
+   "note": "LD A,n"
+  },
+  "carryYMin": {
+   "address": "$E496",
+   "note": "CP n \u2014 strop"
+  },
+  "carryYClampTop": {
+   "address": "$E4AA",
+   "note": "LD A,n"
+  },
+  "carryEdgeTop": {
+   "address": "$E4AF",
+   "note": "CP n \u2014 pod t\u00edmhle odnese hr\u00e1\u010de do m\u00edstnosti nad"
+  },
+  "carryEnterBottom": {
+   "address": "$E4CD",
+   "note": "LD A,n \u2014 orel se objev\u00ed tady"
+  },
+  "carryPlayerBottom": {
+   "address": "$E4D2",
+   "note": "LD A,n \u2014 a hr\u00e1\u010d tady"
+  },
+  "carryEdgeBottom": {
+   "address": "$E4B6",
+   "note": "CP n \u2014 a t\u00edmhle do m\u00edstnosti pod"
+  },
+  "carryEnterTop": {
+   "address": "$E4EA",
+   "note": "LD A,n"
+  },
+  "carryPlayerTop": {
+   "address": "$E4EF",
+   "note": "LD A,n"
+  },
+  "carryDropXMin": {
+   "address": "$E51F",
+   "note": "CP n \u2014 pustit hr\u00e1\u010de se d\u00e1 jen uvnit\u0159 m\u00edstnosti"
+  },
+  "carryDropXMax": {
+   "address": "$E522",
+   "note": "CP n"
+  },
+  "carryDropYMin": {
+   "address": "$E528",
+   "note": "CP n"
+  },
+  "carryDropYMax": {
+   "address": "$E52B",
+   "note": "CP n"
+  },
+  "carryEagleType": {
+   "address": "$E565",
+   "note": "LD (IX+0),n \u2014 orel, kter\u00fd hr\u00e1\u010de pustil, odl\u00e9t\u00e1"
+  },
+  "carryEagleVy": {
+   "address": "$E569",
+   "note": "LD (IX+9),n \u2014 vzh\u016fru"
+  },
+  "takeKeyState": {
+   "address": "$E900",
+   "note": "LD A,(nn) \u2014 stav kl\u00e1vesy vz\u00edt/polo\u017eit ($FF stisk, $FE spot\u0159ebov\u00e1no)"
+  },
+  "carryX": {
+   "address": "$E910",
+   "note": "LD (IX+1),n \u2014 nesen\u00e1 zbra\u0148 se kresl\u00ed do panelu sem"
+  },
+  "carryY": {
+   "address": "$E914",
+   "note": "LD (IX+3),n \u2014 a sem"
+  },
+  "takeConsumed": {
+   "address": "$E91C",
+   "note": "LD A,n \u2014 a stisk se spot\u0159ebuje, aby ji nesebraly v\u0161echny najednou"
+  },
+  "carryStep": {
+   "address": "$E937",
+   "note": "ADD A,n \u2014 ka\u017ed\u00fd dal\u0161\u00ed stisk zbra\u0148 posune o tohle doprava"
+  },
+  "carryLimit": {
+   "address": "$E939",
+   "note": "CP n \u2014 a za t\u00edmhle spadne"
+  },
+  "carrySlotMask": {
+   "address": "$E965",
+   "note": "AND n \u2014 po\u0159ad\u00ed nesen\u00e9 zbran\u011b z jej\u00edho x"
+  },
+  "carrySlotMax": {
+   "address": "$E967",
+   "note": "CP n \u2014 a v\u00edc ne\u017e t\u0159i sloty nejsou"
+  },
+  "dropFallStep": {
+   "address": "$E957",
+   "note": "LD (IX+6),n \u2014 pu\u0161t\u011bn\u00e1 zbra\u0148 za\u010d\u00edn\u00e1 padat s t\u00edmhle"
+  },
+  "dropMask": {
+   "address": "$E98A",
+   "note": "AND n \u2014 a zrychluje o (po\u010d\u00edtadlo >> 4)"
+  },
+  "dropFloor": {
+   "address": "$E9AB",
+   "note": "CP n \u2014 podlaha m\u00edstnosti"
+  },
+  "dropFloorClamp": {
+   "address": "$E9B7",
+   "note": "LD (IX+3),n"
+  },
+  "dropBelow": {
+   "address": "$E9C5",
+   "note": "CP n \u2014 pod otev\u0159enou podlahou spadne do m\u00edstnosti pod"
+  },
+  "dropSettle": {
+   "address": "$E9D4",
+   "note": "LD (IX+3),n \u2014 a tam si sedne"
+  },
+  "dropLandOffset": {
+   "address": "$E99C",
+   "note": "ADD A,n \u2014 a na n\u00e1bytku takhle"
+  },
+  "guardianAnimMask": {
+   "address": "$ECE2",
+   "note": "AND n \u2014 str\u00e1\u017ece se h\u00fdbe ka\u017ed\u00fd druh\u00fd tik pomal\u00e9ho po\u010d\u00edtadla"
+  },
+  "guardianAnimBit": {
+   "address": "$ECE9",
+   "note": "XOR n \u2014 a je to jedin\u00fd bit typu"
+  },
+  "guardianProjMin": {
+   "address": "$ECF6",
+   "note": "CP n \u2014 k\u00e1men z katapultu str\u00e1\u017eci neubl\u00ed\u017e\u00ed, jen projektil od tohohle typu"
+  },
+  "guardianPairMask": {
+   "address": "$ECFC",
+   "note": "AND n \u2014 p\u00e1rov\u00e1n\u00ed: ((projektil >> 1) - 1) & n"
+  },
+  "guardianTypeShift": {
+   "address": "$ED03",
+   "note": "AND n \u2014 proti (typ >> 1) & n"
+  },
+  "guardianTable": {
+   "address": "$ED08",
+   "note": "LD HL,nn \u2014 a zabit\u00fd str\u00e1\u017ece se od\u0161krtne v tabulce ($EDF4 + 2)"
+  },
+  "guardianKilledFlag": {
+   "address": "$ED0E",
+   "note": "LD A,n \u2014 po prvn\u00edm zabit\u00e9m str\u00e1\u017eci"
+  },
+  "guardianKilledAt": {
+   "address": "$ED10",
+   "note": "LD (nn),A \u2014 se tohle nastav\u00ed a od t\u00e9 chv\u00edle l\u00e9taj\u00ed orli"
+  },
+  "guardianBounceFlag": {
+   "address": "$ED21",
+   "note": "OR n \u2014 dotek se str\u00e1\u017ecem hr\u00e1\u010de odmr\u0161t\u00ed"
+  },
+  "guardianBounceDx": {
+   "address": "$ED26",
+   "note": "LD A,n \u2014 a to hodn\u011b doleva"
+  },
+  "exitX": {
+   "address": "$ED34",
+   "note": "LD (IX+1),n \u2014 v\u00fdchod ze hry v m\u00edstnosti str\u00e1\u017ece"
+  },
+  "exitY": {
+   "address": "$ED38",
+   "note": "LD (IX+3),n"
+  },
+  "exitAttribute": {
+   "address": "$ED3E",
+   "note": "LD (IX+5),n"
+  },
+  "exitColumns": {
+   "address": "$ED3C",
+   "note": "LD C,n \u2014 kresl\u00ed se ze \u010dty\u0159 sloupc\u016f"
+  },
+  "exitStepX": {
+   "address": "$ED4E",
+   "note": "ADD A,n \u2014 po tolika pixelech"
+  },
+  "exitStepY": {
+   "address": "$ED66",
+   "note": "ADD A,n \u2014 a \u0159\u00e1dky po tolika"
+  },
+  "exitRowBase": {
+   "address": "$ED5E",
+   "note": "ADD A,n \u2014 ka\u017ed\u00e1 dal\u0161\u00ed \u0159ada v\u00fdklenku za\u010d\u00edn\u00e1 o kus d\u00e1l doprava"
+  },
+  "exitSensorY": {
+   "address": "$ED91",
+   "note": "CP n \u2014 nad t\u00edmhle je v\u00fdchod pr\u016fchoz\u00ed"
+  },
+  "contactAliveType": {
+   "address": "$E28A",
+   "note": "CP n \u2014 nad t\u00edmhle typem u\u017e Sabreman nen\u00ed na\u017eivu a senzor ml\u010d\u00ed"
+  },
+  "contactReachX": {
+   "address": "$E2A3",
+   "note": "CP n \u2014 jak bl\u00edzko mus\u00ed entita b\u00fdt vodorovn\u011b"
+  },
+  "contactOffsetY": {
+   "address": "$E2AE",
+   "note": "SUB n \u2014 svisle se m\u011b\u0159\u00ed od tohohle posunu"
+  },
+  "contactReachY": {
+   "address": "$E2BA",
+   "note": "CP n \u2014 a takhle bl\u00edzko svisle"
+  },
+  "platformIgnore": {
+   "address": "$E1B9",
+   "note": "AND n \u2014 kdo m\u00e1 tyhle bity v +$0A, na bublin\u011b nestoj\u00ed"
+  },
+  "platformBase": {
+   "address": "$E1BD",
+   "note": "LD HL,nn \u2014 prvn\u00ed ze \u010dty\u0159 slot\u016f bublin"
+  },
+  "platformSlots": {
+   "address": "$E1C3",
+   "note": "LD B,n \u2014 kolik jich je"
+  },
+  "platformType": {
+   "address": "$E1C8",
+   "note": "CP n \u2014 typ bubliny (po o\u0159ezu dvou bit\u016f f\u00e1ze)"
+  },
+  "platformReachX": {
+   "address": "$E1E5",
+   "note": "CP n \u2014 dosah bubliny vodorovn\u011b"
+  },
+  "platformEdgeX": {
+   "address": "$E1E9",
+   "note": "CP n \u2014 a od t\u00e9hle vzd\u00e1lenosti je to u\u017e jen okraj"
+  },
+  "platformReachY": {
+   "address": "$E1FD",
+   "note": "CP n \u2014 a svisle"
+  },
+  "platformStandY": {
+   "address": "$E212",
+   "note": "SUB n \u2014 kdo na n\u00ed stoj\u00ed, stoj\u00ed o tolik nad n\u00ed"
+  },
+  "obstacleRows": {
+   "address": "$B444",
+   "note": "CP n \u2014 od tohohle \u0159\u00e1dku dol\u016f jsou jeskyn\u011b a n\u00e1bytek jsou jen dva sloty"
+  },
+  "obstacleBaseCastle": {
+   "address": "$B448",
+   "note": "LD IY,nn \u2014 prvn\u00ed ze \u010dty\u0159 slot\u016f n\u00e1bytku hradu"
+  },
+  "obstacleSlotsCastle": {
+   "address": "$B44C",
+   "note": "LD B,n"
+  },
+  "obstacleBaseCave": {
+   "address": "$B450",
+   "note": "LD IY,nn \u2014 a jeskyn\u011b maj\u00ed jen dva"
+  },
+  "obstacleSlotsCave": {
+   "address": "$B454",
+   "note": "LD B,n"
+  },
+  "obstacleExitType": {
+   "address": "$B476",
+   "note": "CP n \u2014 v\u00fdchod m\u00e1 vlastn\u00ed senzor ($ED8A), je to kl\u00edn"
+  },
+  "exitSensorSub": {
+   "address": "$ED96",
+   "note": "SUB n \u2014 \u0161\u00ed\u0159ka kl\u00ednu se po\u010d\u00edt\u00e1 z v\u00fd\u0161ky"
+  },
+  "exitSensorAdd": {
+   "address": "$ED9C",
+   "note": "ADD A,n"
+  },
+  "exitSensorX": {
+   "address": "$ED9F",
+   "note": "LD A,n \u2014 a m\u011b\u0159\u00ed se od st\u0159edu m\u00edstnosti"
+  },
+  "carriedClampRight": {
+   "address": "$E5C9",
+   "note": "CP n \u2014 nesen\u00fd Sabreman u prav\u00e9 st\u011bny"
+  },
+  "carriedClampLeft": {
+   "address": "$E5CD",
+   "note": "CP n \u2014 a u lev\u00e9"
+  },
+  "carriedFloor": {
+   "address": "$E5EA",
+   "note": "CP n \u2014 a u podlahy"
+  },
+  "carriedLandOffset": {
+   "address": "$E61A",
+   "note": "ADD A,n \u2014 a kdy\u017e ho n\u011bco zachyt\u00ed, sedne si sem"
+  },
+  "carriedPlantBit": {
+   "address": "$E57E",
+   "note": "LD (IX+$0A),n \u2014 dotek jeskynn\u00edho porostu za letu"
+  },
+  "scoreLow": {
+   "address": "$A045",
+   "note": "LD HL,nn \u2014 spodn\u00ed ze t\u0159\u00ed BCD bajt\u016f sk\u00f3re"
+  },
+  "scoreDigits": {
+   "address": "$A060",
+   "note": "LD B,n \u2014 kolik bajt\u016f panel kresl\u00ed"
+  },
+  "scorePanelAt": {
+   "address": "$A05A",
+   "note": "LD HL,nn \u2014 a kam"
+  },
+  "scoreBase": {
+   "address": "$A05D",
+   "note": "LD DE,nn \u2014 nejvy\u0161\u0161\u00ed bajt sk\u00f3re"
+  },
+  "gargoyleAccel": {
+   "address": "$B3FF",
+   "note": "INC A \u2014 chrli\u010d zrychluje dol\u016f po jedn\u00e9"
+  },
+  "carryAccel": {
+   "address": "$E335",
+   "note": "INC A \u2014 orel s hr\u00e1\u010dem zrychluje po jedn\u00e9"
+  },
+  "scoreAddLow": {
+   "address": "$A04C",
+   "note": "ADD A,(HL) / DAA \u2014 sk\u00f3re je BCD"
+  },
+  "scoreAddMid": {
+   "address": "$A051",
+   "note": "ADC A,B / DAA \u2014 a p\u0159enos jde v\u00fd\u0161"
+  },
+  "scoreAddHigh": {
+   "address": "$A056",
+   "note": "ADC A,0 / DAA"
+  },
+  "scoreBcdDec": {
+   "address": "$A04A",
+   "note": "DEC A / DAA \u2014 a hodnota za nep\u0159\u00edtele"
+  }
+ },
+ "handlers": {
+  "$B079": "letajici nepritel v mistnosti hrace (typy $30-$33, $40-$43, $64-$67)",
+  "$EE66": "totez, ale smer se losuje (typy $34-$37)",
+  "$B3D8": "chrlic - pada a vodorovne ma pevnou rychlost (typy $44-$47)",
+  "$B2CF": "nepritel mimo mistnost hrace: vodorovne k ni",
+  "$B358": "a svisle",
+  "$B57A": "projektil za letu (typy $38-$3B), telo sdileji vsechny",
+  "$EA9C": "dyka a sip (typy $6C-$6F) - jen jina animace",
+  "$EA7D": "ohniva koule (typy $70-$71)",
+  "$DEE8": "naraz projektilu do steny (typy $48-$4B)",
+  "$DF15": "vybuch zabiteho nepritele (typy $4C-$4F)",
+  "$E8D7": "zbran: lezi, nese se, pada (typy $68-$6B)",
+  "$E2CB": "orel, ktery nese hrace (typy $5C-$5F)",
+  "$E570": "Sabreman v par\u00e1tech (typy $60-$63)",
+  "$ECCA": "strazce (typy $80-$87)",
+  "$ED2E": "vychod ze hry, ktery se v mistnosti strazce objevi (typ $88)",
+  "$A045": "bodovani"
+ },
+ "weapons": {
+  "note": "ctyri zbrane, typ = $68 + i. Katapult je startovni a je ve vsech ctyrech sadach na temz miste (M4, $E9FD).",
+  "names": {
+   "$68": {
+    "id": "catapult",
+    "cs": "katapult"
+   },
+   "$69": {
+    "id": "bow",
+    "cs": "luk"
+   },
+   "$6A": {
+    "id": "torch",
+    "cs": "pochoden"
+   },
+   "$6B": {
+    "id": "sword",
+    "cs": "mec"
+   }
+  },
+  "carriedSlots": "$8EEB",
+  "carriedMax": 3,
+  "carryX": [
+   136,
+   160,
+   184
+  ],
+  "carryY": 15
+ },
+ "projectiles": {
+  "note": "tabulka $B753: projektil = tabulka[typ zbrane & 3]. Kamen z katapultu je jediny pod $6C, a proto jediny, ktery zadneho strazce nezabije ($ECF6).",
+  "table": "$B753",
+  "raw": [
+   "$38",
+   "$6E",
+   "$70",
+   "$6C"
+  ],
+  "rows": [
+   {
+    "weapon": 104,
+    "weaponName": "catapult",
+    "projectile": 56,
+    "projectileName": "stone",
+    "pair": 3
+   },
+   {
+    "weapon": 105,
+    "weaponName": "bow",
+    "projectile": 110,
+    "projectileName": "arrow",
+    "pair": 2
+   },
+   {
+    "weapon": 106,
+    "weaponName": "torch",
+    "projectile": 112,
+    "projectileName": "fireball",
+    "pair": 3
+   },
+   {
+    "weapon": 107,
+    "weaponName": "sword",
+    "projectile": 108,
+    "projectileName": "dagger",
+    "pair": 1
+   }
+  ],
+  "names": {
+   "$38": {
+    "id": "stone",
+    "cs": "kamen"
+   },
+   "$6C": {
+    "id": "dagger",
+    "cs": "dyka"
+   },
+   "$6E": {
+    "id": "arrow",
+    "cs": "sip"
+   },
+   "$70": {
+    "id": "fireball",
+    "cs": "ohniva koule"
+   }
+  }
+ },
+ "guardians": {
+  "note": "strazce padne jen na svuj projektil: ((projektil >> 1) - 1) & 3 == (typ >> 1) & 3 ($ECFA). Prvni zabity nastavi $8EF9 a od te chvile letaji orli.",
+  "pairs": [
+   {
+    "guardian": 128,
+    "guardianName": "unreachable",
+    "weapon": null,
+    "weaponName": null,
+    "projectile": null
+   },
+   {
+    "guardian": 130,
+    "guardianName": "beetle",
+    "weapon": 107,
+    "weaponName": "sword",
+    "projectile": 108
+   },
+   {
+    "guardian": 132,
+    "guardianName": "minotaur",
+    "weapon": 105,
+    "weaponName": "bow",
+    "projectile": 110
+   },
+   {
+    "guardian": 134,
+    "guardianName": "devil",
+    "weapon": 106,
+    "weaponName": "torch",
+    "projectile": 112
+   }
+  ],
+  "names": {
+   "$80": {
+    "id": "unreachable",
+    "cs": "nedosazitelny"
+   },
+   "$82": {
+    "id": "beetle",
+    "cs": "brouk"
+   },
+   "$84": {
+    "id": "minotaur",
+    "cs": "rohaty strazce"
+   },
+   "$86": {
+    "id": "devil",
+    "cs": "dabel"
+   }
+  }
+ },
+ "score": {
+  "note": "skore jsou tri BCD bajty; zabity nepritel prict\u0435 BCD(typ)-1 do spodniho, sebrany predmet (typ >> 1) do prostredniho",
+  "kills": [
+   {
+    "type": 48,
+    "what": "orel",
+    "points": 41
+   },
+   {
+    "type": 52,
+    "what": "orel (losujici)",
+    "points": 51
+   },
+   {
+    "type": 64,
+    "what": "harpyje",
+    "points": 57
+   },
+   {
+    "type": 68,
+    "what": "chrlic",
+    "points": 67
+   },
+   {
+    "type": 92,
+    "what": "orel s hracem",
+    "points": 85
+   },
+   {
+    "type": 130,
+    "what": "strazce (brouk)",
+    "points": 129
+   },
+   {
+    "type": 132,
+    "what": "strazce (rohaty)",
+    "points": 131
+   },
+   {
+    "type": 134,
+    "what": "strazce (dabel)",
+    "points": 133
+   }
+  ],
+  "pickups": [
+   {
+    "type": 100,
+    "what": "drahokam",
+    "points": 5000
+   },
+   {
+    "type": 102,
+    "what": "drahokam",
+    "points": 5100
+   }
+  ]
+ },
+ "scoreCalls": [
+  {
+   "address": "$DF4A",
+   "note": "zabity nepritel: C = typ entity, B = 0"
+  },
+  {
+   "address": "$E78C",
+   "note": "sebrany predmet: B = typ >> 1, C = 0"
+  }
+ ]
+}

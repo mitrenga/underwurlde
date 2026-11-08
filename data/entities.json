@@ -1,0 +1,2000 @@
+{
+ "note": "M4: rozmisteni entit po svete, vytazene z obrazu hry (tools/dumpentities.py). Kazda konstanta je operand skutecne instrukce; nabytek hradu je skutecna tabulka $6800, jeskyne se skladaji proceduralne a stav si pamatuji v tabulce $6000.",
+ "grid": {
+  "cols": 16,
+  "castleRows": 16,
+  "rows": 52
+ },
+ "values": {
+  "recordsBase": 36602,
+  "recordsStride": 16,
+  "recordsEnd": 36906,
+  "weaponRecordsBase": 36906,
+  "weaponRecordsStride": 8,
+  "weaponRecordsEnd": 36946,
+  "typeJumpTable": 37402,
+  "redrawAllBase": 36617,
+  "redrawAllCount": 4865,
+  "redrawWeaponsBase": 36913,
+  "castleTable": 26624,
+  "castleSlots": 36730,
+  "castleCount": 4,
+  "castleXMask": 240,
+  "castleXOffset": 8,
+  "castleYMask": 120,
+  "castleYOffset": 63,
+  "castleAttribute": 69,
+  "caveStateTable": 24576,
+  "caveClosedMask": 17,
+  "caveClosedValue": 17,
+  "caveDecorXTable": 46935,
+  "caveDecorType": 28,
+  "caveDecorY": 159,
+  "caveGrowthTable": 46955,
+  "caveVentTable": 47019,
+  "caveVentBytes": 32,
+  "cavePlantTableA": 59201,
+  "cavePlantTableB": 59209,
+  "cavePlantXA": 24,
+  "cavePlantXB": 160,
+  "cavePlantIndexMask": 6,
+  "cavePlantXMask": 48,
+  "cavePlantYMask": 48,
+  "cavePlantYOffset": 119,
+  "cavePlantAttribute": 70,
+  "caveStateSeed": 1,
+  "caveStateBitA": 207,
+  "caveStateOrA": 164,
+  "caveStateSeedB": 254,
+  "caveStateOrB1": 48,
+  "caveStateOrB2": 132,
+  "caveStateAndB": 223,
+  "caveStateDefault": 1,
+  "placeTableLives": 60868,
+  "placeCountLives": 16,
+  "placeTableGuardians": 60916,
+  "placeCountGuardians": 8,
+  "placeTemplate": 60852,
+  "placeSlot": 36794,
+  "heightTable": 60341,
+  "lifeXOffset": 8,
+  "guardianTypeMask": 6,
+  "guardianTypeBase": 128,
+  "guardianX": 128,
+  "guardianY": 159,
+  "guardianAttribute": 3,
+  "guardianRoomType": 136,
+  "guardianRoomSlot": 36762,
+  "guardianKilledFlag": 36601,
+  "weaponSets": 59901,
+  "weaponSetMask": 96,
+  "weaponSetBytes": 32,
+  "weaponSetTarget": 36906,
+  "bubbleAliveType": 60,
+  "bubbleRow": 16,
+  "bubbleSlots": 36698,
+  "bubbleSlotCount": 4,
+  "bubbleChance": 63,
+  "bubbleType": 88,
+  "bubbleXMask": 128,
+  "bubbleXOffset": 64,
+  "bubbleStartY": 191,
+  "bubbleAttribute": 70,
+  "bubbleVentXOffset": 12,
+  "bubbleRise": 2,
+  "bubblePopY": 66,
+  "bubbleCarryY": 34,
+  "bubbleWrapY": 191,
+  "dripRow": 16,
+  "dripCeilingMask": 1,
+  "dripChance": 15,
+  "dripSlot": 36666,
+  "dripType": 80,
+  "dripStartY": 64,
+  "dripAttribute": 70,
+  "dripVelocity": 16,
+  "monsterChance": 7,
+  "monsterSlots": 36826,
+  "monsterSlotCount": 4,
+  "monsterEaglesBit": 16,
+  "monsterTypeMask": 20,
+  "monsterTypeBase": 48,
+  "monsterAttrMask": 3,
+  "monsterAttrBase": 66,
+  "gemCountdown": 80,
+  "gemPanelAddress": 36590,
+  "gemPlayerAttribute": 69,
+  "gemPlayerAttrRestore": 71,
+  "gemTick": 3,
+  "gemRoomBit": 158,
+  "extraLifeType": 127,
+  "plantGemMask": 3,
+  "plantGemBase": 100,
+  "plantGemAttribute": 69,
+  "plantGemSlotOffset": 32,
+  "livesStart": 6,
+  "livesAddress": 36570,
+  "pauseHalfRow": 191,
+  "pauseKeyMask": 1
+ },
+ "source": {
+  "recordsBase": {
+   "address": "$951D",
+   "note": "LD IX,nn \u2014 prvn\u00ed \u0161estn\u00e1ctibajtov\u00fd z\u00e1znam entity"
+  },
+  "recordsStride": {
+   "address": "$9459",
+   "note": "LD DE,nn \u2014 d\u00e9lka \u0161estn\u00e1ctibajtov\u00e9ho z\u00e1znamu"
+  },
+  "recordsEnd": {
+   "address": "$9471",
+   "note": "LD DE,nn \u2014 za t\u00edmhle z\u00e1znamem \u0161estn\u00e1ctibajtov\u00e1 tabulka kon\u010d\u00ed"
+  },
+  "weaponRecordsBase": {
+   "address": "$950C",
+   "note": "LD IX,nn \u2014 prvn\u00ed osmibajtov\u00fd z\u00e1znam (zbran\u011b)"
+  },
+  "weaponRecordsStride": {
+   "address": "$954C",
+   "note": "LD DE,nn \u2014 d\u00e9lka osmibajtov\u00e9ho z\u00e1znamu"
+  },
+  "weaponRecordsEnd": {
+   "address": "$9554",
+   "note": "LD DE,nn \u2014 za t\u00edmhle osmibajtov\u00e1 tabulka kon\u010d\u00ed"
+  },
+  "typeJumpTable": {
+   "address": "$920B",
+   "note": "LD BC,nn \u2014 tabulka skok\u016f podle typu entity"
+  },
+  "redrawAllBase": {
+   "address": "$998F",
+   "note": "LD HL,nn \u2014 vstup do m\u00edstnosti nastav\u00ed v\u0161em z\u00e1znam\u016fm p\u0159\u00edznak p\u0159ekreslen\u00ed"
+  },
+  "redrawAllCount": {
+   "address": "$9995",
+   "note": "LD BC,nn \u2014 B = kolik z\u00e1znam\u016f, C = zapisovan\u00e1 hodnota"
+  },
+  "redrawWeaponsBase": {
+   "address": "$999D",
+   "note": "LD HL,nn \u2014 a tot\u00e9\u017e pro \u010dty\u0159i zbran\u011b (bit 0 bajtu +7)"
+  },
+  "castleTable": {
+   "address": "$EAB4",
+   "note": "LD DE,nn \u2014 tabulka n\u00e1bytku hradn\u00edch m\u00edstnost\u00ed, 8 B na m\u00edstnost"
+  },
+  "castleSlots": {
+   "address": "$EABB",
+   "note": "LD IY,nn \u2014 kam se n\u00e1bytek zapisuje (prvn\u00ed ze \u010dty\u0159 z\u00e1znam\u016f)"
+  },
+  "castleCount": {
+   "address": "$EAC2",
+   "note": "LD B,n \u2014 kolik entit m\u00e1 hradn\u00ed m\u00edstnost"
+  },
+  "castleXMask": {
+   "address": "$EACA",
+   "note": "AND n \u2014 vodorovn\u00e1 slo\u017eka zabalen\u00e9ho bajtu"
+  },
+  "castleXOffset": {
+   "address": "$EACC",
+   "note": "ADD A,n \u2014 a jej\u00ed posun (x = (b & maska) + n)"
+  },
+  "castleYMask": {
+   "address": "$EAD5",
+   "note": "AND n \u2014 svisl\u00e1 slo\u017eka (bajt se nejd\u0159\u00edv t\u0159ikr\u00e1t rotuje vlevo)"
+  },
+  "castleYOffset": {
+   "address": "$EAD7",
+   "note": "ADD A,n \u2014 a jej\u00ed posun (y = ((b<<3) & maska) + n)"
+  },
+  "castleAttribute": {
+   "address": "$EAEC",
+   "note": "LD (IY+$05),n \u2014 barva n\u00e1bytku"
+  },
+  "caveStateTable": {
+   "address": "$E6B8",
+   "note": "LD BC,nn \u2014 druh\u00e1 tabulka po m\u00edstnostech (stav, 2 B, adresace jako $7000)"
+  },
+  "caveClosedMask": {
+   "address": "$AF7B",
+   "note": "AND n \u2014 bity stropu a podlahy, kter\u00e9 se testuj\u00ed"
+  },
+  "caveClosedValue": {
+   "address": "$AF7D",
+   "note": "CP n \u2014 kdy\u017e jsou oba uzav\u0159en\u00e9, jde se na tabulku v\u00fdzdoby"
+  },
+  "caveDecorXTable": {
+   "address": "$AF8E",
+   "note": "LD DE,nn \u2014 16 vodorovn\u00fdch poloh, index (sloupec+\u0159\u00e1dek) & $0F"
+  },
+  "caveDecorType": {
+   "address": "$AFA1",
+   "note": "LD (HL),n \u2014 typ v\u00fdzdoby na podlaze uzav\u0159en\u00e9 jeskyn\u011b"
+  },
+  "caveDecorY": {
+   "address": "$AF9C",
+   "note": "LD (HL),n \u2014 a jej\u00ed svisl\u00e1 poloha (podlaha)"
+  },
+  "caveGrowthTable": {
+   "address": "$AFA9",
+   "note": "LD DE,nn \u2014 \u010dty\u0159i p\u0159edlohy porostu, index (sloupec<<4) & $30"
+  },
+  "caveVentTable": {
+   "address": "$AFCE",
+   "note": "LD HL,nn \u2014 dv\u011b p\u0159edlohy pro jeskyni s uzav\u0159enou podlahou (typ $54)"
+  },
+  "caveVentBytes": {
+   "address": "$AFD4",
+   "note": "LD BC,nn \u2014 kolik bajt\u016f se z n\u00ed kop\u00edruje"
+  },
+  "cavePlantTableA": {
+   "address": "$E6FA",
+   "note": "LD HL,nn \u2014 ukazatele p\u0159edloh podle prvn\u00edho bajtu stavu m\u00edstnosti"
+  },
+  "cavePlantTableB": {
+   "address": "$E70B",
+   "note": "LD HL,nn \u2014 a podle druh\u00e9ho bajtu"
+  },
+  "cavePlantXA": {
+   "address": "$E6F8",
+   "note": "LD C,n \u2014 vodorovn\u00fd z\u00e1klad entity z prvn\u00edho bajtu"
+  },
+  "cavePlantXB": {
+   "address": "$E709",
+   "note": "LD C,n \u2014 a z druh\u00e9ho"
+  },
+  "cavePlantIndexMask": {
+   "address": "$E6F6",
+   "note": "AND n \u2014 bity stavu, kter\u00e9 vyb\u00edraj\u00ed p\u0159edlohu"
+  },
+  "cavePlantXMask": {
+   "address": "$E6D1",
+   "note": "AND n \u2014 bity stavu, kter\u00e9 d\u00e1vaj\u00ed vodorovn\u00fd posun"
+  },
+  "cavePlantYMask": {
+   "address": "$E6DE",
+   "note": "AND n \u2014 a (po dvou rotac\u00edch vpravo) svisl\u00fd posun"
+  },
+  "cavePlantYOffset": {
+   "address": "$E6E0",
+   "note": "ADD A,n \u2014 svisl\u00fd z\u00e1klad jeskynn\u00ed rostliny"
+  },
+  "cavePlantAttribute": {
+   "address": "$E6E9",
+   "note": "LD (HL),n \u2014 barva jeskynn\u00ed rostliny"
+  },
+  "caveStateSeed": {
+   "address": "$E717",
+   "note": "OR n \u2014 prvn\u00ed bajt stavu se odvozuje z pomal\u00e9ho po\u010d\u00edtadla"
+  },
+  "caveStateBitA": {
+   "address": "$E71E",
+   "note": "AND n \u2014 a zahod\u00ed se, kdy\u017e v po\u010d\u00edtadle chyb\u00ed bit 2"
+  },
+  "caveStateOrA": {
+   "address": "$E724",
+   "note": "OR n \u2014 u otev\u0159en\u00e9 lev\u00e9 st\u011bny se p\u0159idaj\u00ed tyhle bity"
+  },
+  "caveStateSeedB": {
+   "address": "$E72A",
+   "note": "AND n \u2014 druh\u00fd bajt vych\u00e1z\u00ed z FRAMES"
+  },
+  "caveStateOrB1": {
+   "address": "$E732",
+   "note": "OR n \u2014 bity druh\u00e9ho bajtu, kdy\u017e v FRAMES chyb\u00ed bit 2"
+  },
+  "caveStateOrB2": {
+   "address": "$E738",
+   "note": "OR n \u2014 a bity pro otev\u0159enou pravou st\u011bnu"
+  },
+  "caveStateAndB": {
+   "address": "$E73A",
+   "note": "AND n \u2014 kter\u00e9 se zas zamaskuj\u00ed"
+  },
+  "caveStateDefault": {
+   "address": "$9942",
+   "note": "LD (HL),n \u2014 do pr\u00e1zdn\u00e9ho stavu m\u00edstnosti se p\u0159i vstupu zap\u00ed\u0161e tohle"
+  },
+  "placeTableLives": {
+   "address": "$EC3A",
+   "note": "LD HL,nn \u2014 tabulka sou\u0159adnic extra \u017eivot\u016f (3 B: sloupec, \u0159\u00e1dek, sebr\u00e1no)"
+  },
+  "placeCountLives": {
+   "address": "$EC45",
+   "note": "LD B,n \u2014 kolik jich je"
+  },
+  "placeTableGuardians": {
+   "address": "$EC54",
+   "note": "LD HL,nn \u2014 tot\u00e9\u017e pro str\u00e1\u017ece"
+  },
+  "placeCountGuardians": {
+   "address": "$EC57",
+   "note": "LD B,n \u2014 kolik z\u00e1znam\u016f se proch\u00e1z\u00ed"
+  },
+  "placeTemplate": {
+   "address": "$EC6E",
+   "note": "LD HL,nn \u2014 p\u0159edloha z\u00e1znamu, kter\u00fd se do m\u00edstnosti vlo\u017e\u00ed"
+  },
+  "placeSlot": {
+   "address": "$EC71",
+   "note": "LD DE,nn \u2014 a slot, do kter\u00e9ho se vlo\u017e\u00ed"
+  },
+  "heightTable": {
+   "address": "$EC9E",
+   "note": "LD HL,nn \u2014 v\u00fd\u0161ky n\u00e1bytku (extra \u017eivot le\u017e\u00ed na jeho horn\u00ed hran\u011b)"
+  },
+  "lifeXOffset": {
+   "address": "$EC92",
+   "note": "ADD A,n \u2014 extra \u017eivot stoj\u00ed o tolik px vpravo od entity, na kter\u00e9 le\u017e\u00ed"
+  },
+  "guardianTypeMask": {
+   "address": "$EC00",
+   "note": "AND n \u2014 bity indexu, kter\u00e9 vyb\u00edraj\u00ed str\u00e1\u017ece"
+  },
+  "guardianTypeBase": {
+   "address": "$EC02",
+   "note": "ADD A,n \u2014 prvn\u00ed typ str\u00e1\u017ece"
+  },
+  "guardianX": {
+   "address": "$EC0D",
+   "note": "LD (IY+$01),n \u2014 str\u00e1\u017ece stoj\u00ed uprost\u0159ed m\u00edstnosti"
+  },
+  "guardianY": {
+   "address": "$EC11",
+   "note": "LD (IY+$03),n \u2014 na podlaze"
+  },
+  "guardianAttribute": {
+   "address": "$EC15",
+   "note": "LD (IY+$05),n \u2014 barva str\u00e1\u017ece"
+  },
+  "guardianRoomType": {
+   "address": "$EC2F",
+   "note": "LD A,n \u2014 typ, kter\u00fd se v m\u00edstnosti str\u00e1\u017ece objev\u00ed nav\u00edc (v\u00fdchod)"
+  },
+  "guardianRoomSlot": {
+   "address": "$EC31",
+   "note": "LD (nn),A \u2014 a slot, do kter\u00e9ho se zap\u00ed\u0161e"
+  },
+  "guardianKilledFlag": {
+   "address": "$ED10",
+   "note": "LD (nn),A \u2014 po zabit\u00ed str\u00e1\u017ece se sem zap\u00ed\u0161e 1 (od t\u00e9 chv\u00edle l\u00e9taj\u00ed orli)"
+  },
+  "weaponSets": {
+   "address": "$E8C1",
+   "note": "LD HL,nn \u2014 \u010dty\u0159i hotov\u00e9 sady poloh zbran\u00ed"
+  },
+  "weaponSetMask": {
+   "address": "$E8CB",
+   "note": "AND n \u2014 sada = FRAMES posunut\u00e9 o 4 bity a maskovan\u00e9 (tedy (FRAMES>>1)&3)"
+  },
+  "weaponSetBytes": {
+   "address": "$E8D1",
+   "note": "LD BC,nn \u2014 kolik bajt\u016f se z n\u00ed kop\u00edruje"
+  },
+  "weaponSetTarget": {
+   "address": "$E8BE",
+   "note": "LD DE,nn \u2014 kam (osmibajtov\u00e9 z\u00e1znamy)"
+  },
+  "bubbleAliveType": {
+   "address": "$E062",
+   "note": "CP n \u2014 bubliny se generuj\u00ed, jen dokud je hr\u00e1\u010d na\u017eivu"
+  },
+  "bubbleRow": {
+   "address": "$E068",
+   "note": "CP n \u2014 a jen v jeskyn\u00edch od tohohle \u0159\u00e1dku m\u0159\u00ed\u017eky"
+  },
+  "bubbleSlots": {
+   "address": "$E06B",
+   "note": "LD HL,nn \u2014 prvn\u00ed ze slot\u016f na bubliny"
+  },
+  "bubbleSlotCount": {
+   "address": "$E071",
+   "note": "LD B,n \u2014 kolik jich je"
+  },
+  "bubbleChance": {
+   "address": "$E083",
+   "note": "AND n \u2014 bublina vznikne, jen kdy\u017e (FRAMES + $1A) & n == 0"
+  },
+  "bubbleType": {
+   "address": "$E08D",
+   "note": "LD A,n \u2014 typ bubliny"
+  },
+  "bubbleXMask": {
+   "address": "$E090",
+   "note": "AND n \u2014 bublina z podlahy vznik\u00e1 na jedn\u00e9 ze dvou x podle po\u010d\u00edtadla"
+  },
+  "bubbleXOffset": {
+   "address": "$E095",
+   "note": "ADD A,n \u2014 a jejich z\u00e1klad"
+  },
+  "bubbleStartY": {
+   "address": "$E09B",
+   "note": "LD (HL),n \u2014 startuje pod podlahou"
+  },
+  "bubbleAttribute": {
+   "address": "$E09F",
+   "note": "LD (HL),n \u2014 barva bubliny"
+  },
+  "bubbleVentXOffset": {
+   "address": "$E0D1",
+   "note": "ADD A,n \u2014 bublina z rostliny typu $54 vznik\u00e1 o tolik px vpravo"
+  },
+  "bubbleRise": {
+   "address": "$E0F5",
+   "note": "SUB n \u2014 o kolik px bublina za krok stoup\u00e1"
+  },
+  "bubblePopY": {
+   "address": "$E100",
+   "note": "CP n \u2014 pod uzav\u0159en\u00fdm stropem tady praskne"
+  },
+  "bubbleCarryY": {
+   "address": "$E106",
+   "note": "CP n \u2014 jinak tady p\u0159ejde do m\u00edstnosti nad"
+  },
+  "bubbleWrapY": {
+   "address": "$E109",
+   "note": "LD (IX+$03),n \u2014 a objev\u00ed se tady"
+  },
+  "dripRow": {
+   "address": "$DF5B",
+   "note": "CP n \u2014 kr\u00e1pn\u00edky padaj\u00ed jen v jeskyn\u00edch"
+  },
+  "dripCeilingMask": {
+   "address": "$DF61",
+   "note": "AND n \u2014 a jen pod uzav\u0159en\u00fdm stropem"
+  },
+  "dripChance": {
+   "address": "$DF71",
+   "note": "AND n \u2014 kadence (FRAMES | pomal\u00e9 po\u010d\u00edtadlo) & n == 0"
+  },
+  "dripSlot": {
+   "address": "$DF77",
+   "note": "LD DE,nn \u2014 slot, do kter\u00e9ho se kr\u00e1pn\u00edk vlo\u017e\u00ed"
+  },
+  "dripType": {
+   "address": "$DF81",
+   "note": "LD (HL),n \u2014 typ kr\u00e1pn\u00edku"
+  },
+  "dripStartY": {
+   "address": "$DF86",
+   "note": "LD (HL),n \u2014 vznik\u00e1 u stropu"
+  },
+  "dripAttribute": {
+   "address": "$DF8A",
+   "note": "LD (HL),n \u2014 jeho barva"
+  },
+  "dripVelocity": {
+   "address": "$DF90",
+   "note": "LD (HL),n \u2014 a svisl\u00e1 rychlost v 1/16 px za krok"
+  },
+  "monsterChance": {
+   "address": "$AFE2",
+   "note": "AND n \u2014 kadence gener\u00e1toru nep\u0159\u00e1tel"
+  },
+  "monsterSlots": {
+   "address": "$AFE5",
+   "note": "LD HL,nn \u2014 prvn\u00ed ze slot\u016f na nep\u0159\u00e1tele"
+  },
+  "monsterSlotCount": {
+   "address": "$AFEB",
+   "note": "LD B,n \u2014 kolik jich je"
+  },
+  "monsterEaglesBit": {
+   "address": "$B002",
+   "note": "OR n \u2014 dokud nepadl str\u00e1\u017ece, tenhle bit typu je vynucen\u00fd (orli nel\u00e9taj\u00ed)"
+  },
+  "monsterTypeMask": {
+   "address": "$B005",
+   "note": "AND n \u2014 bity po\u010d\u00edtadla, kter\u00e9 vyb\u00edraj\u00ed druh nep\u0159\u00edtele"
+  },
+  "monsterTypeBase": {
+   "address": "$B007",
+   "note": "ADD A,n \u2014 a prvn\u00ed typ"
+  },
+  "monsterAttrMask": {
+   "address": "$B035",
+   "note": "AND n \u2014 barva nep\u0159\u00edtele z FRAMES"
+  },
+  "monsterAttrBase": {
+   "address": "$B037",
+   "note": "ADD A,n \u2014 a jej\u00ed z\u00e1klad"
+  },
+  "gemCountdown": {
+   "address": "$E794",
+   "note": "LD A,n \u2014 sebran\u00fd drahokam nastav\u00ed odpo\u010det nezranitelnosti (BCD)"
+  },
+  "gemPanelAddress": {
+   "address": "$E796",
+   "note": "LD (nn),A \u2014 bajt, kter\u00fd panel ukazuje jako GEMS \u2013 je to t\u00fd\u017e odpo\u010det"
+  },
+  "gemPlayerAttribute": {
+   "address": "$E78F",
+   "note": "LD A,n \u2014 po dobu nezranitelnosti m\u00e1 Sabreman tuhle barvu"
+  },
+  "gemPlayerAttrRestore": {
+   "address": "$94A4",
+   "note": "LD A,n \u2014 a po vypr\u0161en\u00ed se vr\u00e1t\u00ed tahle"
+  },
+  "gemTick": {
+   "address": "$948E",
+   "note": "AND n \u2014 odpo\u010det ub\u00fdv\u00e1 ka\u017ed\u00fd n+1-t\u00fd tik pomal\u00e9ho po\u010d\u00edtadla"
+  },
+  "gemRoomBit": {
+   "address": "$E7A6",
+   "note": "RES b,(HL) \u2014 sebran\u00fd drahokam se od\u0161krtne v bajtu stavu m\u00edstnosti"
+  },
+  "extraLifeType": {
+   "address": "$E781",
+   "note": "CP n \u2014 tenhle typ je extra \u017eivot, ne drahokam"
+  },
+  "plantGemMask": {
+   "address": "$E649",
+   "note": "AND n \u2014 z jeskynn\u00ed rostliny vypadne jeden ze \u010dty\u0159 typ\u016f drahokamu"
+  },
+  "plantGemBase": {
+   "address": "$E64B",
+   "note": "ADD A,n \u2014 a jeho prvn\u00ed typ"
+  },
+  "plantGemAttribute": {
+   "address": "$E658",
+   "note": "LD (HL),n \u2014 barva drahokamu"
+  },
+  "plantGemSlotOffset": {
+   "address": "$E634",
+   "note": "LD HL,nn \u2014 drahokam se zalo\u017e\u00ed o tolik bajt\u016f d\u00e1l v tabulce entit"
+  },
+  "livesStart": {
+   "address": "$9074",
+   "note": "z\u00e1soba \u017eivot\u016f p\u0159i startu hry (panel ukazuje 6, pokus\u016f je 7)"
+  },
+  "livesAddress": {
+   "address": "$E7EC",
+   "note": "LD A,(nn) \u2014 bajt se z\u00e1sobou \u017eivot\u016f (BCD)"
+  },
+  "pauseHalfRow": {
+   "address": "$94A9",
+   "note": "LD A,n \u2014 p\u016fl\u0159\u00e1dek kl\u00e1vesnice, na kter\u00e9m hra hled\u00e1 ENTER (pauza)"
+  },
+  "pauseKeyMask": {
+   "address": "$94AF",
+   "note": "AND n \u2014 a bit t\u00e9 kl\u00e1vesy; pauza je smy\u010dka s DI, dokud se nezm\u00e1\u010dkne znovu"
+  }
+ },
+ "recordLayout": {
+  "0": "typ (a zaroven index do tabulky spritu $9332)",
+  "1": "x \u2013 levy okraj spritu",
+  "2": "sloupec mistnosti",
+  "3": "y \u2013 spodni pixelova radka spritu",
+  "4": "radek mistnosti",
+  "5": "atribut (barva)",
+  "6": "dx / poradove cislo / faze, podle typu",
+  "8": "pocitadlo fazi",
+  "9": "svisla rychlost v 1/16 px za krok",
+  "10": "pocitadlo (a u nabytku prvni bajt hitboxu)",
+  "11": "maska uzavrenych stran mistnosti",
+  "14": "vysledek senzoru",
+  "15": "priznaky: bit 0 prekreslit, bit 7 dotek jeskynniho porostu"
+ },
+ "types": [
+  {
+   "from": 0,
+   "to": 0,
+   "name": "free",
+   "note": "pr\u00e1zdn\u00fd slot ($9454 jen vr\u00e1t\u00ed)",
+   "handler": "$9454",
+   "frames": [
+    null
+   ]
+  },
+  {
+   "from": 1,
+   "to": 8,
+   "name": "playerRope",
+   "note": "Sabreman na lanu (M3)",
+   "handler": "$A316",
+   "frames": [
+    0,
+    1,
+    2,
+    1,
+    3,
+    4,
+    5,
+    4
+   ]
+  },
+  {
+   "from": 9,
+   "to": 16,
+   "name": "playerWalk",
+   "note": "Sabreman stoj\u00ed a chod\u00ed (M3)",
+   "handler": "$A433",
+   "frames": [
+    6,
+    7,
+    8,
+    7,
+    9,
+    10,
+    11,
+    10
+   ]
+  },
+  {
+   "from": 17,
+   "to": 20,
+   "name": "playerCrouch",
+   "note": "Sabreman pokr\u010den\u00fd p\u0159ed odskokem (M3)",
+   "handler": "$A5F1",
+   "frames": [
+    12,
+    13,
+    14,
+    15
+   ]
+  },
+  {
+   "from": 21,
+   "to": 22,
+   "name": "playerJump",
+   "note": "Sabreman ve skoku (M3)",
+   "handler": "$A6A6",
+   "frames": [
+    16,
+    17
+   ]
+  },
+  {
+   "from": 23,
+   "to": 23,
+   "name": "rope",
+   "note": "lano bez hr\u00e1\u010de, vlastn\u00ed entita (M3)",
+   "handler": "$AA4C",
+   "frames": [
+    null
+   ]
+  },
+  {
+   "from": 24,
+   "to": 27,
+   "name": "playerTumble",
+   "note": "Sabreman v kotoulu \u2013 p\u00e1d a odmr\u0161t\u011bn\u00ed (M3)",
+   "handler": "$A925",
+   "frames": [
+    18,
+    19,
+    20,
+    21
+   ]
+  },
+  {
+   "from": 28,
+   "to": 43,
+   "name": "caveDecor",
+   "note": "jeskynn\u00ed porost na podlaze; p\u0159i doteku hod\u00ed hr\u00e1\u010de do kotoulu (bit 7 p\u0159\u00edznak\u016f, $AEF0) \u2013 to jsou ty \u201ejedovat\u00e9 rostliny\", a nezab\u00edjej\u00ed",
+   "handler": "$AEB9",
+   "frames": [
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    22,
+    23,
+    28,
+    29,
+    30,
+    31,
+    22,
+    23,
+    24,
+    25
+   ]
+  },
+  {
+   "from": 44,
+   "to": 47,
+   "name": "caveGrowth",
+   "note": "porost uprost\u0159ed uzav\u0159en\u00e9 jeskyn\u011b (jen se kresl\u00ed, p\u0159ek\u00e1\u017ekou je p\u0159es hitbox v z\u00e1znamu)",
+   "handler": "$AF3F",
+   "frames": [
+    32,
+    33,
+    34,
+    35
+   ]
+  },
+  {
+   "from": 48,
+   "to": 51,
+   "name": "eagle",
+   "note": "orel \u2013 l\u00e9t\u00e1 a\u017e po prvn\u00edm zabit\u00e9m str\u00e1\u017eci ($8EF9); M5",
+   "handler": "$B079",
+   "frames": [
+    36,
+    37,
+    38,
+    39
+   ]
+  },
+  {
+   "from": 52,
+   "to": 55,
+   "name": "eagleCarry",
+   "note": "orel s hr\u00e1\u010dem? ($EE66) \u2013 M5",
+   "handler": "$EE66",
+   "frames": [
+    40,
+    41,
+    42,
+    41
+   ]
+  },
+  {
+   "from": 56,
+   "to": 59,
+   "name": "projectile",
+   "note": "projektil ($B57A) \u2013 M5",
+   "handler": "$B57A",
+   "frames": [
+    43,
+    44,
+    45,
+    46
+   ]
+  },
+  {
+   "from": 60,
+   "to": 61,
+   "name": "cavePlantLow",
+   "note": "jeskynn\u00ed rostlina, ze kter\u00e9 vypadne drahokam ($E622)",
+   "handler": "$E622",
+   "frames": [
+    47,
+    48
+   ]
+  },
+  {
+   "from": 62,
+   "to": 63,
+   "name": "playerDeath",
+   "note": "animace smrti (M3)",
+   "handler": "$E7E3",
+   "frames": [
+    49,
+    50
+   ]
+  },
+  {
+   "from": 64,
+   "to": 67,
+   "name": "harpy",
+   "note": "nep\u0159\u00edtel z gener\u00e1toru $AFDA; M5",
+   "handler": "$B079",
+   "frames": [
+    51,
+    52,
+    53,
+    54
+   ]
+  },
+  {
+   "from": 68,
+   "to": 71,
+   "name": "gargoyle",
+   "note": "nep\u0159\u00edtel z gener\u00e1toru $AFDA ($B3D8); M5",
+   "handler": "$B3D8",
+   "frames": [
+    55,
+    56,
+    57,
+    56
+   ]
+  },
+  {
+   "from": 72,
+   "to": 75,
+   "name": "spark",
+   "note": "($DEE8) \u2013 M5",
+   "handler": "$DEE8",
+   "frames": [
+    58,
+    59,
+    60,
+    61
+   ]
+  },
+  {
+   "from": 76,
+   "to": 79,
+   "name": "burst",
+   "note": "($DF15) \u2013 M5",
+   "handler": "$DF15",
+   "frames": [
+    62,
+    63,
+    64,
+    65
+   ]
+  },
+  {
+   "from": 80,
+   "to": 80,
+   "name": "drip",
+   "note": "padaj\u00edc\u00ed kr\u00e1pn\u00edk ($DF98), gener\u00e1tor $DF58",
+   "handler": "$DF98",
+   "frames": [
+    66
+   ]
+  },
+  {
+   "from": 81,
+   "to": 83,
+   "name": "dripSplash",
+   "note": "kr\u00e1pn\u00edk po dopadu ($E027)",
+   "handler": "$E027",
+   "frames": [
+    67,
+    68,
+    69
+   ]
+  },
+  {
+   "from": 84,
+   "to": 84,
+   "name": "vent",
+   "note": "jeskynn\u00ed rostlina, kter\u00e1 vypou\u0161t\u00ed bubliny ($E0A9)",
+   "handler": "$AF3F",
+   "frames": [
+    70
+   ]
+  },
+  {
+   "from": 85,
+   "to": 87,
+   "name": "cavePlantHigh",
+   "note": "jeskynn\u00ed rostlina, ze kter\u00e9 vypadne drahokam ($E622)",
+   "handler": "$E622",
+   "frames": [
+    71,
+    72,
+    73
+   ]
+  },
+  {
+   "from": 88,
+   "to": 91,
+   "name": "bubble",
+   "note": "vulkanick\u00e1 bublina \u2013 jedin\u00e9, na \u010dem se d\u00e1 krom\u011b podlahy st\u00e1t ($E117, senzor $E1B4)",
+   "handler": "$E117",
+   "frames": [
+    74,
+    75,
+    76,
+    75
+   ]
+  },
+  {
+   "from": 92,
+   "to": 95,
+   "name": "bubblePop",
+   "note": "bublina po prasknut\u00ed ($E2CB)",
+   "handler": "$E2CB",
+   "frames": [
+    36,
+    37,
+    38,
+    39
+   ]
+  },
+  {
+   "from": 96,
+   "to": 99,
+   "name": "carried",
+   "note": "to, co hr\u00e1\u010de nese ($E570) \u2013 M5",
+   "handler": "$E570",
+   "frames": [
+    3,
+    4,
+    0,
+    1
+   ]
+  },
+  {
+   "from": 100,
+   "to": 103,
+   "name": "gem",
+   "note": "drahokam: spust\u00ed odpo\u010det nezranitelnosti ($E751)",
+   "handler": "$E751",
+   "frames": [
+    77,
+    78,
+    79,
+    80
+   ]
+  },
+  {
+   "from": 104,
+   "to": 107,
+   "name": "weapon",
+   "note": "zbra\u0148 le\u017e\u00edc\u00ed ve sv\u011bt\u011b ($E8D7)",
+   "handler": "$E8D7",
+   "frames": [
+    81,
+    82,
+    83,
+    84
+   ]
+  },
+  {
+   "from": 108,
+   "to": 111,
+   "name": "weaponHeld1",
+   "note": "nesen\u00e1 zbra\u0148 ($EA9C) \u2013 M5",
+   "handler": "$EA9C",
+   "frames": [
+    85,
+    86,
+    87,
+    88
+   ]
+  },
+  {
+   "from": 112,
+   "to": 113,
+   "name": "weaponHeld2",
+   "note": "nesen\u00e1 zbra\u0148 ($EA7D) \u2013 M5",
+   "handler": "$EA7D",
+   "frames": [
+    89,
+    90
+   ]
+  },
+  {
+   "from": 114,
+   "to": 115,
+   "name": "weaponHeld3",
+   "note": "nesen\u00e1 zbra\u0148 ($E18C) \u2013 M5",
+   "handler": "$E18C",
+   "frames": [
+    91,
+    92
+   ]
+  },
+  {
+   "from": 116,
+   "to": 120,
+   "name": "furnitureA",
+   "note": "n\u00e1bytek hradu z tabulky $6800 ($EAF9)",
+   "handler": "$EAF9",
+   "frames": [
+    93,
+    94,
+    95,
+    96,
+    97
+   ]
+  },
+  {
+   "from": 121,
+   "to": 126,
+   "name": "furnitureB",
+   "note": "n\u00e1bytek hradu z tabulky $6800 ($EB39)",
+   "handler": "$EB39",
+   "frames": [
+    98,
+    99,
+    100,
+    101,
+    102,
+    103
+   ]
+  },
+  {
+   "from": 127,
+   "to": 127,
+   "name": "extraLife",
+   "note": "extra \u017eivot z tabulky $EDC4 ($E751)",
+   "handler": "$E751",
+   "frames": [
+    104
+   ]
+  },
+  {
+   "from": 128,
+   "to": 135,
+   "name": "guardian",
+   "note": "str\u00e1\u017ece v\u00fdchodu z tabulky $EDF4 ($ECCA)",
+   "handler": "$ECCA",
+   "frames": [
+    105,
+    106,
+    107,
+    108,
+    105,
+    106,
+    109,
+    110
+   ]
+  },
+  {
+   "from": 136,
+   "to": 136,
+   "name": "exit",
+   "note": "entita, kter\u00e1 se objev\u00ed v m\u00edstnosti str\u00e1\u017ece ($ED2E)",
+   "handler": "$ED2E",
+   "frames": [
+    66
+   ]
+  },
+  {
+   "from": 137,
+   "to": 137,
+   "name": "system89",
+   "note": "($A0AC) bez spritu",
+   "handler": "$A0AC",
+   "frames": [
+    null
+   ]
+  },
+  {
+   "from": 138,
+   "to": 138,
+   "name": "system8A",
+   "note": "($A0C5) bez spritu",
+   "handler": "$A0C5",
+   "frames": [
+    null
+   ]
+  },
+  {
+   "from": 139,
+   "to": 139,
+   "name": "system8B",
+   "note": "($A107) bez spritu",
+   "handler": "$A107",
+   "frames": [
+    null
+   ]
+  },
+  {
+   "from": 140,
+   "to": 140,
+   "name": "weaponIcon1",
+   "note": "velk\u00fd obr\u00e1zek zbran\u011b (kresl\u00ed ho $95A3)",
+   "handler": "$C3DB",
+   "frames": [
+    111
+   ]
+  },
+  {
+   "from": 141,
+   "to": 141,
+   "name": "weaponIcon2",
+   "note": "velk\u00fd obr\u00e1zek zbran\u011b",
+   "handler": "$C4F7",
+   "frames": [
+    112
+   ]
+  },
+  {
+   "from": 142,
+   "to": 142,
+   "name": "weaponIcon3",
+   "note": "velk\u00fd obr\u00e1zek zbran\u011b",
+   "handler": "$C529",
+   "frames": [
+    113
+   ]
+  },
+  {
+   "from": 143,
+   "to": 143,
+   "name": "weaponIcon4",
+   "note": "velk\u00fd obr\u00e1zek zbran\u011b",
+   "handler": "$C55B",
+   "frames": [
+    114
+   ]
+  },
+  {
+   "from": 144,
+   "to": 144,
+   "name": "system90",
+   "note": "($C529, stejn\u00e1 obsluha jako $8E)",
+   "handler": "$C529",
+   "frames": [
+    115
+   ]
+  }
+ ],
+ "castle": {
+  "note": "skutecna tabulka: 8 B na hradni mistnost, 4 entity po 2 B (typ, zabalena poloha). Rutina $EAA2.",
+  "table": "$6800",
+  "stride": 128,
+  "perRoom": 4,
+  "x": "(b & $F0) + $08",
+  "y": "((b << 3) & $78) + $3F",
+  "attribute": 69,
+  "slots": "$8F7A",
+  "entityCount": 683,
+  "roomsWithFurniture": 242,
+  "table_note": "radky tabulky $6800 v hexa, 16 radku po 128 B (16 mistnosti x 8 B); entita i = (typ, zabalena poloha) na bajtech 8*sloupec+2*i",
+  "packed": [
+   "764C7DC500000000761C7C75000000007B4F78BF0000000078377D6F7B8175AA7B4D7C9F00000000767C7CC500000000773C7EB700000000757F00000000000078287B6F7DB80000763C7E637EB900007A7F0000000000007A5B789F00000000763C77AC000000007E6474BC00000000766C0000000000007A6F000000000000",
+   "7D3F798B7CCB00007B6B7CC500000000764C7C6174C900007E14747C7BA200007D34777C7B8179C37B5E7CAA00000000782E797B7DBF00007D7F78737CC175CA7C127A1A787E7D747C557D7F7BB900007D21787F7C847ACB7C317E3C79980000762C748C00000000773C000000000000784F7DBE000000007C6F7C637AAA79C3",
+   "7C2F79837D9D7847747C0000000000007C3A7D8F000000007D6E000000000000776C00000000000078547A6F7CB979C37A62758A79B77DBF78557C6E79BA75C27A1A785F79657DC1741C7C53778C79C37C217A547B4F7DA9777C000000000000784F7CBB00000000776C74B8000000007B51758A7CC37DCF771C7C777AB20000",
+   "7D7E78287A7300007E57768C000000007822749C7ED400007B117C197A5F79887C1F795C7AAF00007A45779C7DB100007C1F7D367A8D78917D44777C7CB100007B82793A788F7DCD7E1D7D6F7C75000078447D5F7AAA79B30000000000000000741C7D767AC200007A4E7DCF000000007A1779737B6A7CCF786A7DBF00000000",
+   "7811744C7A940000761C748879B900007B5C0000000000007C557DB174BC0000772C7D6178B500007D3C7E78000000007D147A627B697CC47C33773C78B50000784F7D317C98000078117B1E7D687AB2761C79687CB100007D257E7C000000000000775C0000000079367D4F7C917A9A7D267881777C00007D5178797AC579CF",
+   "000000000000000074787ECC000000007C247B81777C00FF7E3C747C7DBC00007E37776C7EC7000079287B5C000000007428766C000000007DBF7A2D786900007D347C3F798B7AA27515774C7D8100007E787C7F000000007B5F0000000000007C497D4F7B9C000000007A397C927D9F00000000000000007A1F7B61796A7DC4",
+   "7E157D1F7C697B817B3F7A9A000000007B4F7EBD000000007D577B6F7CCB00007C5E78BB000000007A4A7D9F000000007E7B7CCF000000007B5F784275A900007E37767C7A9200007E4C7498000000007C54777C74C500007C12751F795A7DB278487C927C9E0000773C7C4175B5000079387E8C000000007B5D7A727CC775CF",
+   "7C2F7B517D6978B37D347C3F797B7AA27A35776C79B300007D11762C797778C17D23774C79A300007542763C7B8500007861776C79C600007B5F7C6479C37ACA7B2F7DAD000000007D1F7A6A7CCF00007D55768C0000000078517E6B79B47CAF7831773C799600007B3E7DBF000000007B4F78CF0000000078167D61777C0000",
+   "7814773C758200007A16764C7B710000784E0000000000007A7F0000000000007B5D7CCE000000007A58786F000000007B667C7E000000007C327B2E787874C67D1F7C6978717AC67917786A7DBF7B6100000000000000007B417D47778C78A300000000000000007C1F7A62786A7DB5775C7D617BB40000744E7B9F00000000",
+   "7C7E0000000000007B4978BF000000007927778C7C9100007C217566779C7ED37A257D897E937C4F7B547D6F7EBB7DB17C1A7D55785F7AC27A377C91799B00007562777C7AC500007D167B6C7C6100007A7F0000000000007D587C7F000000007E5C768C00000000774C7B5175B500007D2F7E9C000000007E44798A78CE0000",
+   "771C797776AC7DC17A427B787CB275CF7C1F786975BF00007544777C000000007B4776AC7EA300007A2F797A78C27CCE761C7A44779C75B2000000000000000074487B7B000000007588786F00000000791C7B64786F7CC178227B3E7D7878C2766C7BBC000000007B4874AB00000000783F7B717A8A79C77C137D1E7A6A7B71",
+   "0000000000000000781F7D137A5A7C81786E7A6379BA00007D1F7C8C000000007E47778C000000007816766C7B617DC67B2B75A60000000074397E8C00000000775C78C5000000007B6F7D297811758578747B7F7DC87DB17C13772C74950000766C75B6000000007C6F78A6000000007B387D8C75930000766C74C97C610000",
+   "7D5F7AAA000000007445777C7CB300007E137B5776AC00007828758F7C7200000000000000000000792A7C7E75B300007C3A747900000000762C7E8800000000772C7D957BBA000074257E867BBA0000742578767BAC75C275277E8C0000000078487B8F000000007946769C7DB100007E2C747A000000007C5F7B9C00000000",
+   "7E1475597D9E79A400000000000000007D4F7A9A000000007E33763C749800007B4976BC000000007C12772C74897EC300000000000000007E1D7C7E75BA00007E2C748A7BB90000772C7872769C00007C157B6A7DC500000000765C79C900007C317E4C7499000078397D7F7CCA000074487B8B000000000000795A7EA47CBF",
+   "79337D497AA678AF000000000000000078A27D597C9F00007A6F000000000000765C7DA57EDC00007D367B4C78A700007B27766C7CB5000078217A2A7D5F7E887425777C000000007E487B9C00000000773C7DB500000000783F798B000000007488764C000000007A22753B79877C9F7D497B8E78C900007D187A627C7E78C8",
+   "7C597D427BAF7AB3000000000000000079347DCF7B787DC57448768C7DB100007D3F7BAE000000000000000000000000784F7C797DBF0000775C7B92000000007438778C75B300007E2C7B6576AC00007B1C7426777C00007514775C7E93000000000000000000007B327C997D4F000078217C6878A3789F7E237D63779C79C3"
+  ]
+ },
+ "caves": {
+  "note": "jeskyne tabulku nemaji: $AF56 poskl\u00e1d\u00e1 m\u00edstnost z popisn\u00e9ho bajtu a z (sloupec+radek), a u otevrene podlahy si stav mistnosti vygeneruje pri prvni navsteve ($E714) do tabulky na $6000. Proto jsou jeskyne kazdou hru jine.",
+  "stateTable": "$6000",
+  "decorXTable": [
+   "$80",
+   "$98",
+   "$68",
+   "$30",
+   "$B0",
+   "$98",
+   "$50",
+   "$68",
+   "$B0",
+   "$80",
+   "$38",
+   "$98",
+   "$50",
+   "$68",
+   "$C8",
+   "$80",
+   "$98"
+  ],
+  "templates": {
+   "growth": [
+    {
+     "address": "$B76B",
+     "record": [
+      44,
+      128,
+      0,
+      160,
+      0,
+      70,
+      0,
+      0,
+      0,
+      0,
+      20,
+      8,
+      34,
+      27,
+      4,
+      1
+     ],
+     "pointer": null
+    },
+    {
+     "address": "$B77B",
+     "record": [
+      45,
+      128,
+      0,
+      160,
+      0,
+      70,
+      0,
+      0,
+      0,
+      0,
+      22,
+      12,
+      34,
+      27,
+      4,
+      1
+     ],
+     "pointer": null
+    },
+    {
+     "address": "$B78B",
+     "record": [
+      46,
+      128,
+      0,
+      160,
+      0,
+      70,
+      0,
+      0,
+      0,
+      0,
+      22,
+      12,
+      26,
+      19,
+      4,
+      1
+     ],
+     "pointer": null
+    },
+    {
+     "address": "$B79B",
+     "record": [
+      47,
+      128,
+      0,
+      160,
+      0,
+      70,
+      0,
+      0,
+      0,
+      0,
+      18,
+      8,
+      18,
+      11,
+      0,
+      1
+     ],
+     "pointer": null
+    }
+   ],
+   "vent": [
+    {
+     "address": "$B7AB",
+     "record": [
+      84,
+      64,
+      0,
+      160,
+      0,
+      70,
+      0,
+      0,
+      0,
+      0,
+      28,
+      16,
+      10,
+      5,
+      12,
+      1
+     ],
+     "pointer": null
+    },
+    {
+     "address": "$B7BB",
+     "record": [
+      84,
+      160,
+      0,
+      160,
+      0,
+      70,
+      0,
+      0,
+      0,
+      0,
+      28,
+      16,
+      10,
+      5,
+      12,
+      1
+     ],
+     "pointer": null
+    }
+   ],
+   "plantA": [
+    {
+     "address": "$E741",
+     "record": null,
+     "pointer": "$B7CB"
+    },
+    {
+     "address": "$E743",
+     "record": null,
+     "pointer": "$B7DB"
+    },
+    {
+     "address": "$E745",
+     "record": null,
+     "pointer": "$B7EB"
+    },
+    {
+     "address": "$E747",
+     "record": null,
+     "pointer": "$B7EB"
+    }
+   ],
+   "plantB": [
+    {
+     "address": "$E749",
+     "record": null,
+     "pointer": "$B7FB"
+    },
+    {
+     "address": "$E74B",
+     "record": null,
+     "pointer": "$B80B"
+    },
+    {
+     "address": "$E74D",
+     "record": null,
+     "pointer": "$B7EB"
+    },
+    {
+     "address": "$E74F",
+     "record": null,
+     "pointer": "$B7EB"
+    }
+   ]
+  },
+  "pointedTemplates": {
+   "$B7CB": [
+    85,
+    24,
+    0,
+    127,
+    0,
+    70,
+    0,
+    0,
+    0,
+    0,
+    28,
+    8,
+    49,
+    40,
+    0,
+    1
+   ],
+   "$B7DB": [
+    86,
+    24,
+    0,
+    127,
+    0,
+    70,
+    0,
+    0,
+    0,
+    0,
+    28,
+    8,
+    49,
+    40,
+    0,
+    1
+   ],
+   "$B7EB": [
+    87,
+    144,
+    0,
+    111,
+    0,
+    70,
+    0,
+    0,
+    0,
+    0,
+    24,
+    8,
+    33,
+    24,
+    4,
+    1
+   ],
+   "$B7FB": [
+    60,
+    24,
+    0,
+    127,
+    0,
+    70,
+    0,
+    0,
+    0,
+    0,
+    28,
+    8,
+    49,
+    40,
+    4,
+    1
+   ],
+   "$B80B": [
+    61,
+    24,
+    0,
+    127,
+    0,
+    70,
+    0,
+    0,
+    0,
+    0,
+    28,
+    8,
+    49,
+    40,
+    4,
+    1
+   ]
+  }
+ },
+ "extraLives": {
+  "note": "sestnact extra zivotu; lezi na entite, ktera v te mistnosti uz je (x + 8, y - vyska). Sebrani prida zivot a odskrtne se v tabulce.",
+  "table": "$EDC4",
+  "template": [
+   127,
+   0,
+   0,
+   0,
+   0,
+   71,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   1
+  ],
+  "places": [
+   {
+    "col": 10,
+    "row": 11,
+    "index": 16
+   },
+   {
+    "col": 13,
+    "row": 14,
+    "index": 15
+   },
+   {
+    "col": 2,
+    "row": 15,
+    "index": 14
+   },
+   {
+    "col": 7,
+    "row": 17,
+    "index": 13
+   },
+   {
+    "col": 2,
+    "row": 11,
+    "index": 12
+   },
+   {
+    "col": 2,
+    "row": 5,
+    "index": 11
+   },
+   {
+    "col": 8,
+    "row": 5,
+    "index": 10
+   },
+   {
+    "col": 14,
+    "row": 3,
+    "index": 9
+   },
+   {
+    "col": 6,
+    "row": 22,
+    "index": 8
+   },
+   {
+    "col": 5,
+    "row": 31,
+    "index": 7
+   },
+   {
+    "col": 12,
+    "row": 26,
+    "index": 6
+   },
+   {
+    "col": 2,
+    "row": 25,
+    "index": 5
+   },
+   {
+    "col": 9,
+    "row": 18,
+    "index": 4
+   },
+   {
+    "col": 2,
+    "row": 21,
+    "index": 3
+   },
+   {
+    "col": 13,
+    "row": 20,
+    "index": 2
+   },
+   {
+    "col": 11,
+    "row": 11,
+    "index": 1
+   }
+  ]
+ },
+ "guardians": {
+  "note": "ctyri zaznamy, ale platne jsou tri: ctvrty miri na (0,32), kde zadna mistnost neni, takze se strazce $80 nikdy neobjevi - tri strazci, tri vychody. Kazdy padne na jednu zbran (parovani je (typ>>1)&3 proti nesene zbrani v $ECFA). Po prvnim zabitem strazci se do $8EF9 zapise 1 a zacnou letat orli.",
+  "table": "$EDF4",
+  "places": [
+   {
+    "col": 0,
+    "row": 32,
+    "index": 8,
+    "valid": false
+   },
+   {
+    "col": 1,
+    "row": 16,
+    "index": 7,
+    "valid": true,
+    "type": 134,
+    "weapon": 3
+   },
+   {
+    "col": 8,
+    "row": 17,
+    "index": 6,
+    "valid": true,
+    "type": 132,
+    "weapon": 2
+   },
+   {
+    "col": 14,
+    "row": 20,
+    "index": 5,
+    "valid": true,
+    "type": 130,
+    "weapon": 1
+   },
+   {
+    "col": 62,
+    "row": 239,
+    "index": 4,
+    "valid": false
+   },
+   {
+    "col": 253,
+    "row": 219,
+    "index": 3,
+    "valid": false
+   },
+   {
+    "col": 79,
+    "row": 230,
+    "index": 2,
+    "valid": false
+   },
+   {
+    "col": 95,
+    "row": 121,
+    "index": 1,
+    "valid": false
+   }
+  ],
+  "roomEntity": 136
+ },
+ "weapons": {
+  "note": "ctyri hotove sady po 32 B; sada = (FRAMES >> 1) & 3. Katapult ($68) je ve vsech ctyrech na temz miste, ostatni tri se stehuji \u2013 presne jak psaly dobove tipy.",
+  "sets": "$E9FD",
+  "target": "$902A",
+  "select": "(FRAMES >> 1) & 3",
+  "variants": [
+   [
+    {
+     "type": 104,
+     "x": 32,
+     "col": 9,
+     "y": 159,
+     "row": 14,
+     "attr": 66,
+     "record": [
+      104,
+      32,
+      9,
+      159,
+      14,
+      66,
+      0,
+      5
+     ]
+    },
+    {
+     "type": 105,
+     "x": 48,
+     "col": 5,
+     "y": 159,
+     "row": 19,
+     "attr": 67,
+     "record": [
+      105,
+      48,
+      5,
+      159,
+      19,
+      67,
+      0,
+      5
+     ]
+    },
+    {
+     "type": 106,
+     "x": 112,
+     "col": 11,
+     "y": 159,
+     "row": 8,
+     "attr": 68,
+     "record": [
+      106,
+      112,
+      11,
+      159,
+      8,
+      68,
+      0,
+      5
+     ]
+    },
+    {
+     "type": 107,
+     "x": 128,
+     "col": 10,
+     "y": 159,
+     "row": 16,
+     "attr": 69,
+     "record": [
+      107,
+      128,
+      10,
+      159,
+      16,
+      69,
+      0,
+      5
+     ]
+    }
+   ],
+   [
+    {
+     "type": 104,
+     "x": 32,
+     "col": 9,
+     "y": 159,
+     "row": 14,
+     "attr": 66,
+     "record": [
+      104,
+      32,
+      9,
+      159,
+      14,
+      66,
+      0,
+      5
+     ]
+    },
+    {
+     "type": 105,
+     "x": 48,
+     "col": 15,
+     "y": 159,
+     "row": 11,
+     "attr": 67,
+     "record": [
+      105,
+      48,
+      15,
+      159,
+      11,
+      67,
+      0,
+      5
+     ]
+    },
+    {
+     "type": 106,
+     "x": 112,
+     "col": 8,
+     "y": 159,
+     "row": 22,
+     "attr": 68,
+     "record": [
+      106,
+      112,
+      8,
+      159,
+      22,
+      68,
+      0,
+      5
+     ]
+    },
+    {
+     "type": 107,
+     "x": 128,
+     "col": 10,
+     "y": 159,
+     "row": 15,
+     "attr": 69,
+     "record": [
+      107,
+      128,
+      10,
+      159,
+      15,
+      69,
+      0,
+      5
+     ]
+    }
+   ],
+   [
+    {
+     "type": 104,
+     "x": 32,
+     "col": 9,
+     "y": 159,
+     "row": 14,
+     "attr": 66,
+     "record": [
+      104,
+      32,
+      9,
+      159,
+      14,
+      66,
+      0,
+      5
+     ]
+    },
+    {
+     "type": 105,
+     "x": 48,
+     "col": 8,
+     "y": 159,
+     "row": 24,
+     "attr": 67,
+     "record": [
+      105,
+      48,
+      8,
+      159,
+      24,
+      67,
+      0,
+      5
+     ]
+    },
+    {
+     "type": 106,
+     "x": 112,
+     "col": 6,
+     "y": 159,
+     "row": 10,
+     "attr": 68,
+     "record": [
+      106,
+      112,
+      6,
+      159,
+      10,
+      68,
+      0,
+      5
+     ]
+    },
+    {
+     "type": 107,
+     "x": 80,
+     "col": 13,
+     "y": 159,
+     "row": 18,
+     "attr": 69,
+     "record": [
+      107,
+      80,
+      13,
+      159,
+      18,
+      69,
+      0,
+      5
+     ]
+    }
+   ],
+   [
+    {
+     "type": 104,
+     "x": 32,
+     "col": 9,
+     "y": 159,
+     "row": 14,
+     "attr": 66,
+     "record": [
+      104,
+      32,
+      9,
+      159,
+      14,
+      66,
+      0,
+      5
+     ]
+    },
+    {
+     "type": 105,
+     "x": 48,
+     "col": 1,
+     "y": 159,
+     "row": 24,
+     "attr": 67,
+     "record": [
+      105,
+      48,
+      1,
+      159,
+      24,
+      67,
+      0,
+      5
+     ]
+    },
+    {
+     "type": 106,
+     "x": 112,
+     "col": 6,
+     "y": 159,
+     "row": 14,
+     "attr": 68,
+     "record": [
+      106,
+      112,
+      6,
+      159,
+      14,
+      68,
+      0,
+      5
+     ]
+    },
+    {
+     "type": 107,
+     "x": 144,
+     "col": 14,
+     "y": 143,
+     "row": 14,
+     "attr": 69,
+     "record": [
+      107,
+      144,
+      14,
+      143,
+      14,
+      69,
+      0,
+      5
+     ]
+    }
+   ]
+  ]
+ },
+ "hitboxes": {
+  "$74": [
+   20,
+   12,
+   53,
+   44,
+   4
+  ],
+  "$75": [
+   20,
+   12,
+   33,
+   25,
+   4
+  ],
+  "$76": [
+   36,
+   28,
+   41,
+   28,
+   20
+  ],
+  "$77": [
+   46,
+   37,
+   49,
+   36,
+   28
+  ],
+  "$78": [
+   24,
+   16,
+   25,
+   16,
+   8
+  ],
+  "$79": [
+   24,
+   16,
+   33,
+   24,
+   8
+  ],
+  "$7A": [
+   24,
+   16,
+   29,
+   20,
+   8
+  ],
+  "$7B": [
+   32,
+   24,
+   25,
+   16,
+   16
+  ],
+  "$7C": [
+   20,
+   12,
+   25,
+   16,
+   4
+  ],
+  "$7D": [
+   24,
+   16,
+   25,
+   16,
+   8
+  ],
+  "$7E": [
+   16,
+   8,
+   41,
+   32,
+   0
+  ]
+ },
+ "heights": {
+  "$74": 53,
+  "$75": 33,
+  "$76": 41,
+  "$77": 49,
+  "$78": 25,
+  "$79": 33,
+  "$7A": 29,
+  "$7B": 25,
+  "$7C": 25,
+  "$7D": 25,
+  "$7E": 41
+ }
+}

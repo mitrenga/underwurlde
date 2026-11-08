@@ -1,0 +1,21 @@
+{
+  "note": "M5: jen to, co je změřené na originálu (sources/docs/screen_layout.md, disasm_notes.md). Mřížka světa a počet místností jsou z tabulky místností na $7000, fyzika je v physics.json, rozmístění entit v entities.json a jejich chování i bodování v monsters.json.",
+  "frameRate": 50.08,
+  "lives": 6,
+  "startDepth": 15,
+  "initRoom": "room000",
+  "world": {"columns": 16, "rows": 52, "roomsCount": 598, "reachableRoomsCount": 594, "inlayRoomsCount": 597, "transitions": 1222, "exits": 3, "roomWidth": 256, "roomHeight": 176},
+  "worldNote": "M4 (tools/checkworld.py): otevřených stran je 1225, z toho 1222 vede do existující místnosti a 3 jsou východy ze hry (otevřený strop v řádku 0, sloupce 3, 9, 13). Čtyři přechody jsou jednosměrné, takže dosažitelných je 594 z 598 místností.",
+  "panel": {
+    "rows": 2,
+    "score": {"row": 0, "col": 0, "length": 12, "attr": 70, "note": "tri bajty BCD na $8EF3; roste jen ze dvou mist v programu ($DF4A zabity nepritel, $E78C sebrany predmet, disasm_notes.md §15.6)"},
+    "carriedWeapons": {"x": [136, 160, 184], "y": 15, "note": "M5: nesou se az tri zbrane a kresli se do panelu ($E910, $E937)"},
+    "gemsLabel": {"row": 1, "col": 0, "attr": 69},
+    "gems": {"row": 1, "col": 4, "attr": 71, "note": "BCD; není to počet drahokamů, ale odpočet nezranitelnosti ($8EEE, disasm_notes.md §14.7)"},
+    "depthLabel": {"row": 1, "col": 8, "attr": 69},
+    "depth": {"row": 1, "col": 13, "attr": 71},
+    "icon": {"row": 0, "col": 28, "attr": 71},
+    "lives": {"row": 1, "col": 30, "attr": 71, "note": "BCD ($8EDA); ve světě je šestnáct extra životů"}
+  },
+  "borderColor": 0
+}

@@ -1,0 +1,1248 @@
+{
+ "note": "M2: kulisove bloky a pravidla skladani mistnosti, vytazene z obrazu hry (tools/dumpgfx.py). Bajty jsou skutecna data originalu; bitmapa bloku je po pixelovych radcich, atributy rohovych bloku jsou v datech bloku, u pruhu a sten je atribut konstanta z rutiny.",
+ "clearAttribute": 71,
+ "roomSize": {
+  "width": 256,
+  "height": 176
+ },
+ "primitives": {
+  "ceiling": {
+   "x": 24,
+   "y": 16,
+   "cols": 26,
+   "lines": 32,
+   "attr": 66,
+   "routine": "$9C70"
+  },
+  "floor": {
+   "x": 24,
+   "y": 160,
+   "cols": 26,
+   "lines": 32,
+   "attr": 75,
+   "routine": "$9CA7"
+  },
+  "wallLeft": {
+   "x": 0,
+   "y": 48,
+   "cols": 3,
+   "lines": 112,
+   "attr": 77,
+   "routine": "$9CB1"
+  },
+  "wallRight": {
+   "x": 232,
+   "y": 48,
+   "cols": 3,
+   "lines": 112,
+   "attr": 77,
+   "routine": "$9CE8"
+  },
+  "cornerTL": {
+   "x": 0,
+   "y": 16,
+   "cols": 3,
+   "lines": 32,
+   "attr": null,
+   "routine": "$9CF2"
+  },
+  "cornerTR": {
+   "x": 232,
+   "y": 16,
+   "cols": 3,
+   "lines": 32,
+   "attr": null,
+   "routine": "$9D19"
+  },
+  "cornerBL": {
+   "x": 0,
+   "y": 160,
+   "cols": 3,
+   "lines": 32,
+   "attr": null,
+   "routine": "$9D1E"
+  },
+  "cornerBR": {
+   "x": 232,
+   "y": 160,
+   "cols": 3,
+   "lines": 32,
+   "attr": null,
+   "routine": "$9D23"
+  }
+ },
+ "rules": [
+  {
+   "field": "bity 0-2 (strop, prav\u00e1 st\u011bna)",
+   "handlers": {
+    "2": {
+     "routine": "$9D88",
+     "elements": [
+      {
+       "primitive": "cornerTR",
+       "block": "cornerTR@858F"
+      }
+     ]
+    },
+    "3": {
+     "routine": "$9D28",
+     "elements": [
+      {
+       "primitive": "ceiling",
+       "block": "ceiling@7D27"
+      },
+      {
+       "primitive": "cornerTR",
+       "block": "cornerTR@81AB"
+      }
+     ]
+    },
+    "6": {
+     "routine": "$9D30",
+     "elements": [
+      {
+       "primitive": "cornerTR",
+       "block": "cornerTR@80D3"
+      },
+      {
+       "primitive": "wallRight",
+       "block": "wallRight@8217"
+      }
+     ]
+    },
+    "7": {
+     "routine": "$9D39",
+     "elements": [
+      {
+       "primitive": "ceiling",
+       "block": "ceiling@7D27"
+      },
+      {
+       "primitive": "cornerTR",
+       "block": "cornerTR@7CBB"
+      },
+      {
+       "primitive": "wallRight",
+       "block": "wallRight@8217"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "field": "bity 2-4 (prav\u00e1 st\u011bna, podlaha)",
+   "handlers": {
+    "2": {
+     "routine": "$9D8E",
+     "elements": [
+      {
+       "primitive": "cornerBR",
+       "block": "cornerBR@84B7"
+      }
+     ]
+    },
+    "3": {
+     "routine": "$9D45",
+     "elements": [
+      {
+       "primitive": "cornerBR",
+       "block": "cornerBR@77CB"
+      }
+     ]
+    },
+    "6": {
+     "routine": "$9D4A",
+     "elements": [
+      {
+       "primitive": "cornerBR",
+       "block": "cornerBR@76F3"
+      },
+      {
+       "primitive": "floor",
+       "block": "floor@78A3"
+      }
+     ]
+    },
+    "7": {
+     "routine": "$9D53",
+     "elements": [
+      {
+       "primitive": "cornerBR",
+       "block": "cornerBR@7BE3"
+      },
+      {
+       "primitive": "floor",
+       "block": "floor@78A3"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "field": "bity 4-6 (podlaha, lev\u00e1 st\u011bna)",
+   "handlers": {
+    "2": {
+     "routine": "$9D94",
+     "elements": [
+      {
+       "primitive": "cornerBL",
+       "block": "cornerBL@8523"
+      }
+     ]
+    },
+    "3": {
+     "routine": "$9D5C",
+     "elements": [
+      {
+       "primitive": "floor",
+       "block": "floor@78A3"
+      },
+      {
+       "primitive": "cornerBL",
+       "block": "cornerBL@7687"
+      }
+     ]
+    },
+    "6": {
+     "routine": "$9D64",
+     "elements": [
+      {
+       "primitive": "cornerBL",
+       "block": "cornerBL@775F"
+      },
+      {
+       "primitive": "wallLeft",
+       "block": "wallLeft@8367"
+      }
+     ]
+    },
+    "7": {
+     "routine": "$9D6D",
+     "elements": [
+      {
+       "primitive": "cornerBL",
+       "block": "cornerBL@7837"
+      },
+      {
+       "primitive": "wallLeft",
+       "block": "wallLeft@8367"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "field": "bity 6-0 (lev\u00e1 st\u011bna, strop)",
+   "handlers": {
+    "2": {
+     "routine": "$9D9A",
+     "elements": [
+      {
+       "primitive": "cornerTL",
+       "block": "cornerTL@85FB"
+      }
+     ]
+    },
+    "3": {
+     "routine": "$9D76",
+     "elements": [
+      {
+       "primitive": "cornerTL",
+       "block": "cornerTL@8067"
+      }
+     ]
+    },
+    "6": {
+     "routine": "$9D7C",
+     "elements": [
+      {
+       "primitive": "cornerTL",
+       "block": "cornerTL@813F"
+      }
+     ]
+    },
+    "7": {
+     "routine": "$9D82",
+     "elements": [
+      {
+       "primitive": "cornerTL",
+       "block": "cornerTL@7C4F"
+      }
+     ]
+    }
+   }
+  }
+ ],
+ "blocks": {
+  "cornerTR@858F": {
+   "primitive": "cornerTR",
+   "address": "$858F",
+   "x": 232,
+   "y": 16,
+   "cols": 3,
+   "lines": 32,
+   "attribute": null,
+   "attributes": "TU1NTU1NTU1VVVVV",
+   "bitmap": "/v5//vz//Pn/+Pv/8Pv/7vv/3vv/vvv/fvv//vv//vj4/ubj/s6P/j4//P7//f7//fj/+fH/+8H/+xz/+H7/8f7+B/74//7g//6A//4A//AA/8AA/wAA/AAA8AAAgAAA"
+  },
+  "ceiling@7D27": {
+   "primitive": "ceiling",
+   "address": "$7D27",
+   "x": 24,
+   "y": 16,
+   "cols": 26,
+   "lines": 32,
+   "attribute": 66,
+   "attributes": null,
+   "bitmap": "z/7+//v/3/7/fvn/3/v/v37/f/v/3/9/f/P3/39/9//v/v+/e//f+//e/f9/9//v/v7/7/n/v7/v//f/f791/9/7/479/v/v//f9/f+f/v/Pz9f/9/9/v3X/3/v/rv3+/+//6/Pz/3//P/f3u//7/7/Prf/f+/+1+/3/3//d7+/8///f+/t9//3/38+t/9/7/7X7/f+//77f3/v//+f9/X7//gAP757/4Af/effwAH//fr+/5///+/7+/3/4+/Hv3v8f+P9794/fH/7/f3/f///wAD9/v+f9/nfe/P//P3vuf7/n/f78AAf//4/+H7/fn/3/N97z///Pe+z/v/n7/fh/8f/+f/7v3+9v/v9X72v//9b36v9/9vf793/+f3mf/3fv9vf/f6vvW///2vfV/v/vb/fu//mel+//m/P5+/9/s+87///c983+/9+fz9n/9+nv8//s/fv9/7/d933//77vu/3/v9+/N//v99/8//N+9/3/3932/f//v2+7+/+/737P/z/7v/9//b9v/v/f7vT9//+/r3f7/3/2/b/+//2//5/AH6//fgBu+f3AA7+fdgB+//X4A/n//X//5h+P3/+w/477/C/0P99x/w3/+/H4Z//+n//57/Pv/89/s3v57/ef3s3+8//3z/ef//nn/+fz/ff/P3+9fff37+++vf78/++/z+f/5/n/3/3++/7/v9497/fv9717/f9/33+/+/+ffn+//n98/f/f3z3f9+/zvPv7/78+/n/9/n6fn5//n795/9/vnr/37/V59/v/nv35//r5+efnZ//gD7b/4A/ev/AP9XvwB/9t8Af/5ufn4fr5/4AHz38AA95/wAP2e8AA/vPgAf+fX4cAfP7+AAPvvAAA738AAPb3AAA998AAf38+AAAfPzwAAffYAAAvfgAAbvQAABvvgAA8/PgAAAfPyAAA++AAABd8AAAu6AAAB98AABPz4AAAAfPwAAA94AAAB7gAAA3gAAAHvAAAD8+AAAAAfOAAAB7AAAADsAAABcAAAAd8AAAHPgAAAAAfIAAADwAAAAOgAAABwAAAAPAAAAT4AAAAAAfAAAAHwAAAA8AAAAPAAAAD4AAAA+AAAA=="
+  },
+  "cornerTR@81AB": {
+   "primitive": "cornerTR",
+   "address": "$81AB",
+   "x": 232,
+   "y": 16,
+   "cols": 3,
+   "lines": 32,
+   "attribute": null,
+   "attributes": "QkJCQkJCQkJCQkJC",
+   "bitmap": "//3///7///x///O//+++/5/Z/n/H/P+f8/5/z/n+v/f5f8/n/z+f/P5/8/n/z+f/P4///nH/+f5/5/+/n//ff//f///v///v///0///jP/+fH/x/D/P4B4/AAn4AAfAA"
+  },
+  "cornerTR@80D3": {
+   "primitive": "cornerTR",
+   "address": "$80D3",
+   "x": 232,
+   "y": 16,
+   "cols": 3,
+   "lines": 32,
+   "attribute": null,
+   "attributes": "TU1NTU1NTU1NTU1N",
+   "bitmap": "/+///+///+///+/8/8/z/5/P/n8//P7/8/3/z/H/r8X+bw356D3n4P2f4/x/4f3/+P38/n3x/n2H/nwf/nj//mP//g/8/j/j+b+f57x/n6F/f49//798/79z/78P/78/"
+  },
+  "wallRight@8217": {
+   "primitive": "wallRight",
+   "address": "$8217",
+   "x": 232,
+   "y": 48,
+   "cols": 3,
+   "lines": 112,
+   "attribute": 77,
+   "attributes": null,
+   "bitmap": "/n9//P9//f9//fz//cP/8Bv8EPnwN/mD9/wf9/z/9/H/94X/9z3/9P3/8f3/9/3/9/3+9/3A9/gNx4H9ED/9+//9+//9+f/9+H8A/gB//3///3///3///3/+/3/+/3/+/w/+AAAAfh///8///58DDwB453//93//+3//9AB/988D85/w8B//98P/9/n/F/g/R/mH8fvw/Pv//sP//ph//jsP/zvg/zv//zv//zn4/7wy/72D/73z/737P737j7j78zg7/BMT/4fHP/f4j/f/4/f/+eP//En/fx3/H8j/z+A/9/OM+fnj/f35+P398nn597vxh8P0A/fmbPnn5j5n85+H+cfH/fHn/eTv+C4v+Y+P/cfn/ePx/vj8/n5+f38/nz+fzz/P5n/v+P/j/P/Jfn+cPz88355+76R+87E+/bme/LzG/z7w/774/77+/75/"
+  },
+  "cornerTR@7CBB": {
+   "primitive": "cornerTR",
+   "address": "$7CBB",
+   "x": 232,
+   "y": 16,
+   "cols": 3,
+   "lines": 32,
+   "attribute": null,
+   "attributes": "QkJCQkJVVVVNTU1N",
+   "bitmap": "//3///7///x///O//+++/5/Z/n/H/f+f8/6Az/kAv/cAf88A/z8B/P8H8/8fz/9/wAN8AA9/AB9DAH8fAf9/B/9/H/9/f/9///9///x//+F//49//798/79x/78H/z8/"
+  },
+  "cornerBR@84B7": {
+   "primitive": "cornerBR",
+   "address": "$84B7",
+   "x": 232,
+   "y": 160,
+   "cols": 3,
+   "lines": 32,
+   "attribute": null,
+   "attributes": "XVlZTV1ZTU1dTU1N",
+   "bitmap": "ABgAgAQAwAMA4ACA8ABn+AB4/AeE/ngCfwABv4AA38AA7+AA8/AA+PgD/vwc/v7g/n8A/z8Qf57An67gz7bw57j445z88a7+9Cb/9nJ/9/k/9/wf7/4v7/837/+77/+9"
+  },
+  "cornerBR@77CB": {
+   "primitive": "cornerBR",
+   "address": "$77CB",
+   "x": 232,
+   "y": 160,
+   "cols": 3,
+   "lines": 32,
+   "attribute": null,
+   "attributes": "TU1NTU1NTU1NTU1N",
+   "bitmap": "/98//98f/59P/79z/wc5f2M8P3k/n3x/z38/5n+/8H+f/3/P/5/n/4/z/6f5/7P8f7v/f7v/v7n/37z/z75/558/44+f8aeP9Cen9nOz9/m59/w87/4+7/8/7/+/7/+/"
+  },
+  "cornerBR@76F3": {
+   "primitive": "cornerBR",
+   "address": "$76F3",
+   "x": 232,
+   "y": 160,
+   "cols": 3,
+   "lines": 32,
+   "attribute": null,
+   "attributes": "S0tLS0tLS0tLS0tL",
+   "bitmap": "/x+P/z/x/P/+G///4///3D//v8P/f/w////D///8///////+H//94//7/H/n/4/f//G///4f//3j//v8//f/f+//j9//8D///p///eP/+/x/9/+Pz//xv///f///////"
+  },
+  "floor@78A3": {
+   "primitive": "floor",
+   "address": "$78A3",
+   "x": 24,
+   "y": 160,
+   "cols": 26,
+   "lines": 32,
+   "attribute": 75,
+   "attributes": null,
+   "bitmap": "/+c///uf//53///c///J///2H//+T///MP//n8//x+//8fn/9z8//j4//8/D//nx//z/D/h/9/g/8/+P/n/x/8fx/8f/P/x/5/4/+//wh//7h//8YH//jw//+c//+Pz//48f/8Pn//9///x///8f///w///+P///M///8P///B//////8z///wf///b///if//+H///4P//+R/////+Pz//w+///jz//x+f//nn//+eH//z4/////H/z/4/8//x/z/8/+H/5/j//n/D/8/8f/v/D//38f/8f4//z/P//j8f/x/4//x/P/+P9PD///uP//+8f//zj///zH//4cP//4z///HvD///+H///8P///w////h///+H///8f///x4f///HP///Gf//+5///5z///zP///OP//+4ef//j/P//x+f//H5//+fz//8/D//z/H//3/+//5//f/4/+f/j/5//n/4//P/x/8//j/8//9/8f/+f4f/+/5//4/x//8/z//4/n//x/v//5+P//+cf//88f//8c///8cf//85///4d///7H///+P///8H///8P///+H///8P///8P///w////wf///k////nP///w////4f///yP//w5///8+///x8///5+P//8cf//+ef//++H/4/5//+P9//4/8//+f+P//H+P//n+P//3/H4f/7//n/5/+f/8//n/+P/x//H/5//H/8//jf//3/h//7/n//8/5///P8f//n+f//j/v//z///vh///zx///8cf///PH///hn///h9///////Z////w////8P////B////w////wP//////8P////H////mf///4P////h////4f//////Gf///jn///5+///+OP///wx///+cf/////j+///x/n//+f8///j/P//8fx///n+f////x/8//8f/n//H/8//5//H//P/x//9/+P///w//9/+f//n/z//8/+f//n/7//w//P//H//4///5/n///n8///8/n///n8f//4/7///g/ef///7x////mH///89////nH///8Of///4an////w/////D////4P////h/////D////8A=="
+  },
+  "cornerBR@7BE3": {
+   "primitive": "cornerBR",
+   "address": "$7BE3",
+   "x": 232,
+   "y": 160,
+   "cols": 3,
+   "lines": 32,
+   "attribute": null,
+   "attributes": "XU1NS11NS0tdS0tL",
+   "bitmap": "/98/f98fP59P/79zHwc5J2M8Q3k/gXx///8//3+//z+f/x/PHw/n4wfz/IP5/3H8//j///5///0///sf//cPf+8Hj98D8D8B/p///eP/+/x/9/+Pz//xv//+f///////"
+  },
+  "cornerBL@8523": {
+   "primitive": "cornerBL",
+   "address": "$8523",
+   "x": 0,
+   "y": 160,
+   "cols": 3,
+   "lines": 32,
+   "attribute": null,
+   "attributes": "WVldWV1NXU1NTU1N",
+   "bitmap": "ABgAACABAMADAQAH5gAPHgAfIeA/QB5/gAD+AAH9AAP7AAf3AA/PwB8fOD9/B39/AP5/Afz/A3n+B3X5D23zHx3nPznHf3WP/2Qv/k5v/J/v+D/v9H/37P/33f/3vf/3"
+  },
+  "cornerBL@7687": {
+   "primitive": "cornerBL",
+   "address": "$7687",
+   "x": 0,
+   "y": 160,
+   "cols": 3,
+   "lines": 32,
+   "attribute": null,
+   "attributes": "S0tLS0tLS0tLS0tL",
+   "bitmap": "48//j/f/f/j///9///+Y//+H//h7/4f9+H/+B///f///v///3//47/+H8/x/+eH//g//8P//D9///9///+////f+//vx//2///w//+O//x/f/P/n4//7n//9f//+////"
+  },
+  "cornerBL@775F": {
+   "primitive": "cornerBL",
+   "address": "$775F",
+   "x": 0,
+   "y": 160,
+   "cols": 3,
+   "lines": 32,
+   "attribute": null,
+   "attributes": "TU1NTU1NTU1NTU1N",
+   "bitmap": "D77/L7z/b7j/75b/787/797/777/7n7+7P796f774/77x/73z/zvn/tfP/c+f899/579/337/3v3/3fv/m/f/F+/+R8/8z4/5zw/37m/v7O/f6e/f5+3f5+nf5+Hf5+3"
+  },
+  "wallLeft@8367": {
+   "primitive": "wallLeft",
+   "address": "$8367",
+   "x": 0,
+   "y": 48,
+   "cols": 3,
+   "lines": 112,
+   "attribute": 77,
+   "attributes": null,
+   "bitmap": "++B/+G//+4//8+D/B/w/Z/3Pd/3xd/3+c/z/ef7/fB7/PwJ/D3w/Y3/ffD+ff7/D/7/Y/4ff/zDf/34f/39Pfg9vfOBvff8PPf/OAP/gfv/Hfj+ffgAffv/ffv/Pfv/vfAAHAf/n+f/n+f/v8f/PwP/fDv/A/v+f/vA//gOf/h/f/n/f/v/v/v/v/v/v/P/3/I/2+HfwwfcHB/B/n/f/3/f/3/f43+Hj38AP3w7/3H7+w/7wH/7H//4f//x///n///n/38X/Hh3/0P3/x/38z/3j3/2P3/wf3/B/34P/jnn/cf3/c/34d/3zB/3n5/wPz/zP3/3v3/3v3/Hv38Xvj53fpj3fOP3fc/0fR/xeH/jIP+Pi/8fn/xfP/nff+Me/85u/xzu/nHu/MPu/hfu+zfi8/fs5/fe3/G+v+x+f538/z35/D37/737/777/777/"
+  },
+  "cornerBL@7837": {
+   "primitive": "cornerBL",
+   "address": "$7837",
+   "x": 0,
+   "y": 160,
+   "cols": 3,
+   "lines": 32,
+   "attribute": null,
+   "attributes": "TU1dTV1LXUtLS0tL",
+   "bitmap": "z77/L7z+b7j875b478737974777E7n6C7P/+6f7/4/z/x/j/z/D4n+CHP8F/f47//w///v///D//+N//8O//4Pf+wPvxgP3P//w//+O//x/f/P/n4//7n//9f//+////"
+  },
+  "cornerTL@85FB": {
+   "primitive": "cornerTL",
+   "address": "$85FB",
+   "x": 0,
+   "y": 16,
+   "cols": 3,
+   "lines": 32,
+   "attribute": null,
+   "attributes": "TU1NTU1NVU1NVVVV",
+   "bitmap": "/n9//z9//58//98f/98P/993/997/999/99+/99/Hx9/x2d/8XN//Hx//38//3+//x+//4+f/4Pf/zjf/34ff3+PH3/gB3//AX//AH//AA//AAP/AAD/AAA/AAAPAAAB"
+  },
+  "cornerTL@8067": {
+   "primitive": "cornerTL",
+   "address": "$8067",
+   "x": 0,
+   "y": 16,
+   "cols": 3,
+   "lines": 32,
+   "attribute": null,
+   "attributes": "TU1NTU1NTU1NTU1N",
+   "bitmap": "/7///9//f8f/H8P/h8j/0ex/3O8f3i+H34/j3+P47/j+B/w/+/6P+f7n+f7x/P78/z7//37//v7//Px//f8/+f/f8//fA//f8/8f+/5n+/55+/5++/5/+f7/+D7/+A7/"
+  },
+  "cornerTL@813F": {
+   "primitive": "cornerTL",
+   "address": "$813F",
+   "x": 0,
+   "y": 16,
+   "cols": 3,
+   "lines": 32,
+   "attribute": null,
+   "attributes": "QkJCQkJCQkJCQkJC",
+   "bitmap": "/7///3///j///c//fff/m/n/4/5/+f8//n/Pf5/zn+/95/P++fz//n8//5/P/+fz//H8/45//n+f/f/n+//5+//+9///9///L///x///+f/8/j/4H8/wA/HgAH5AAA+A"
+  },
+  "cornerTL@7C4F": {
+   "primitive": "cornerTL",
+   "address": "$7C4F",
+   "x": 0,
+   "y": 16,
+   "cols": 3,
+   "lines": 32,
+   "attribute": null,
+   "attributes": "QkJCVUJCTVVVTU1N",
+   "bitmap": "/7///3///j///c//fff/m/n/4/5/+f+/AX/PAJ/zAO/9APP+APz/wP8/8P/P/P/z/wAD/8AA/vAA/PwA/f8A+f/A+//w+//88/9/+/5/+/5/+/5/+/5/+f7/+D7/+47/"
+  }
+ },
+ "castleGraphics": {
+  "from": "$7687",
+  "to": "$8666",
+  "bytes": 4064
+ },
+ "caves": {
+  "note": "M4: osm jeskynnich oblasti, jedna na kazdy bit popisneho bajtu; kus grafiky vybira tabulka podle (sloupec+radek). Atribut je konstanta $46. Slozeni overeno proti originalu na vsech 351 jeskynnich mistnostech, nula rozdilu.",
+  "fromRow": 16,
+  "attribute": 70,
+  "cornerGeometry": {
+   "cols": 3,
+   "lines": 32
+  },
+  "regions": [
+   {
+    "bit": 0,
+    "routine": "$99F5",
+    "x": 24,
+    "y": 16,
+    "kind": "strip",
+    "pieces": 13,
+    "attributeCols": 26,
+    "attributeRows": 4,
+    "table": "$9A33",
+    "extraBits": null,
+    "pointers": [
+     "$BAEB",
+     "$BB2D",
+     "$BB6F",
+     "$BBB1",
+     "$BBF3",
+     "$BC35",
+     "$BC77",
+     "$BCB9",
+     "$BAEB",
+     "$BB2D",
+     "$BB6F",
+     "$BBB1",
+     "$BBF3",
+     "$BC35",
+     "$BC77",
+     "$BCB9"
+    ]
+   },
+   {
+    "bit": 1,
+    "routine": "$9A53",
+    "x": 232,
+    "y": 16,
+    "kind": "corner",
+    "pieces": 1,
+    "attributeCols": 3,
+    "attributeRows": 4,
+    "table": "$9A96",
+    "extraBits": [
+     0,
+     2
+    ],
+    "pointers": [
+     "$C2B7",
+     "$C989",
+     "$BD4D",
+     "$C8C9",
+     "$C2B7",
+     "$C9E9",
+     "$BDF7",
+     "$C8C9",
+     "$C2B7",
+     "$CA49",
+     "$BEA1",
+     "$C8C9",
+     "$C2B7",
+     "$CAA9",
+     "$BF4B",
+     "$C8C9"
+    ]
+   },
+   {
+    "bit": 2,
+    "routine": "$9AB6",
+    "x": 232,
+    "y": 48,
+    "kind": "wall",
+    "pieces": 2,
+    "attributeCols": 3,
+    "attributeRows": 14,
+    "table": "$9BB0",
+    "extraBits": null,
+    "pointers": [
+     "$BD03",
+     "$BDAD",
+     "$BE57",
+     "$BF01"
+    ]
+   },
+   {
+    "bit": 3,
+    "routine": "$9AF8",
+    "x": 232,
+    "y": 160,
+    "kind": "corner",
+    "pieces": 1,
+    "attributeCols": 3,
+    "attributeRows": 4,
+    "table": "$9B18",
+    "extraBits": [
+     4,
+     2
+    ],
+    "pointers": [
+     "$B87B",
+     "$CB09",
+     "$BD05",
+     "$C809",
+     "$B87B",
+     "$CB69",
+     "$BDAF",
+     "$C809",
+     "$B87B",
+     "$CBC9",
+     "$BE59",
+     "$C809",
+     "$B87B",
+     "$CC29",
+     "$BF03",
+     "$C809"
+    ]
+   },
+   {
+    "bit": 4,
+    "routine": "$9B38",
+    "x": 24,
+    "y": 160,
+    "kind": "strip",
+    "pieces": 13,
+    "attributeCols": 26,
+    "attributeRows": 4,
+    "table": "$9B44",
+    "extraBits": null,
+    "pointers": [
+     "$B8DB",
+     "$B91D",
+     "$B95F",
+     "$B9A1",
+     "$B9E3",
+     "$BA25",
+     "$BA67",
+     "$BAA9",
+     "$B8DB",
+     "$B91D",
+     "$B95F",
+     "$B9A1",
+     "$B9E3",
+     "$BA25",
+     "$BA67",
+     "$BAA9"
+    ]
+   },
+   {
+    "bit": 5,
+    "routine": "$9B64",
+    "x": 0,
+    "y": 160,
+    "kind": "corner",
+    "pieces": 1,
+    "attributeCols": 3,
+    "attributeRows": 4,
+    "table": "$9B84",
+    "extraBits": [
+     4,
+     6
+    ],
+    "pointers": [
+     "$B81B",
+     "$CB09",
+     "$BFAD",
+     "$C869",
+     "$B81B",
+     "$CB69",
+     "$C057",
+     "$C869",
+     "$B81B",
+     "$CBC9",
+     "$C101",
+     "$C869",
+     "$B81B",
+     "$CC29",
+     "$C1AE",
+     "$C869"
+    ]
+   },
+   {
+    "bit": 6,
+    "routine": "$9BA4",
+    "x": 0,
+    "y": 48,
+    "kind": "wall",
+    "pieces": 2,
+    "attributeCols": 3,
+    "attributeRows": 14,
+    "table": "$9AF0",
+    "extraBits": null,
+    "pointers": [
+     "$BFAB",
+     "$C055",
+     "$C0FF",
+     "$C1AC"
+    ]
+   },
+   {
+    "bit": 7,
+    "routine": "$9BB8",
+    "x": 0,
+    "y": 16,
+    "kind": "corner",
+    "pieces": 1,
+    "attributeCols": 3,
+    "attributeRows": 4,
+    "table": "$9BD8",
+    "extraBits": [
+     0,
+     6
+    ],
+    "pointers": [
+     "$C257",
+     "$C989",
+     "$BFF5",
+     "$C929",
+     "$C257",
+     "$C9E9",
+     "$C09F",
+     "$C929",
+     "$C257",
+     "$CA49",
+     "$C149",
+     "$C929",
+     "$C257",
+     "$CAA9",
+     "$C1F7",
+     "$C929"
+    ]
+   }
+  ],
+  "blocks": {
+   "strip@BAEB": {
+    "kind": "strip",
+    "address": "$BAEB",
+    "cols": 2,
+    "lines": 32,
+    "header": 2,
+    "attribute": 70,
+    "bitmap": "IAAgACBAMEAwYjkyOTM5mTmJGckZyLnJcWIzYjJkMnQ1NDI4Mhg2EDQAGgAcADQANAAUABwACAAIAAAAAAAAAA=="
+   },
+   "strip@BB2D": {
+    "kind": "strip",
+    "address": "$BB2D",
+    "cols": 2,
+    "lines": 32,
+    "header": 2,
+    "attribute": 70,
+    "bitmap": "AAQIBAgEGAQYDBwmDCIFIooR5RHlEfER8RBxUXFKcUJxZGNkJ2QnNDtUCVgBgAAAAAAAAAAAAAAAAAAAAAAAAA=="
+   },
+   "strip@BB6F": {
+    "kind": "strip",
+    "address": "$BB6F",
+    "cols": 2,
+    "lines": 32,
+    "header": 2,
+    "attribute": 70,
+    "bitmap": "AgACAAYQBhAOEA8QDxAHgAYIhgjICOYI4ghyAXIBNgI2AR4iL2IT5B/kAcQH6ABoAOgAeAAgAAAAAAAAAAAAAA=="
+   },
+   "strip@BBB1": {
+    "kind": "strip",
+    "address": "$BBB1",
+    "cols": 2,
+    "lines": 32,
+    "header": 2,
+    "attribute": 70,
+    "bitmap": "AAAg4DCfMIM52X/4cPhgOEA8wByAHIAMgAcADwAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+   },
+   "strip@BBF3": {
+    "kind": "strip",
+    "address": "$BBF3",
+    "cols": 2,
+    "lines": 32,
+    "header": 2,
+    "attribute": 70,
+    "bitmap": "AAAACIAcwDjMOO4wbjBuMU4RThEGER8RZxGDEgMSAxIDggOEA4QDiAOIA4gBkAGQAZABkAGgAaABoAGgAaAAwA=="
+   },
+   "strip@BC35": {
+    "kind": "strip",
+    "address": "$BC35",
+    "cols": 2,
+    "lines": 32,
+    "header": 2,
+    "attribute": 70,
+    "bitmap": "AAAAAAAQABAgECAYYBhgFWA84Bz4PPgdeBl4EngSfBp8Cn4Ofg58DjgUPhQ8EDAgOCA+ID8gHiAcIB8gD0AHgA=="
+   },
+   "strip@BC77": {
+    "kind": "strip",
+    "address": "$BC77",
+    "cols": 2,
+    "lines": 32,
+    "header": 2,
+    "attribute": 70,
+    "bitmap": "AAAAAAAAQIBggCCAMMAxxHPEc4xjjOGMYZ1jrWWtZa1lrWmtaa1prXmtOc05zTnNOMc4RzBHIAcgByAGIAQAAA=="
+   },
+   "strip@BCB9": {
+    "kind": "strip",
+    "address": "$BCB9",
+    "cols": 2,
+    "lines": 32,
+    "header": 2,
+    "attribute": 70,
+    "bitmap": "AAAAgADAAOAA8EB4QDxgPPg8/Bj8GPwYfBF+EV8CV8pV7EVMMUQ8BBfsFUgFSAwID+gH0APwAeAAAAAAAAAAAA=="
+   },
+   "corner@C2B7": {
+    "kind": "corner",
+    "address": "$C2B7",
+    "cols": 3,
+    "lines": 32,
+    "header": 0,
+    "attribute": 70,
+    "bitmap": "DwwADhwADDiEDDkkGDMkGTMiETMiETEyMTJwMTRwOZTReZDZeLHZcPG4cOO9c+N9dM9/dNbeZNbeadLaLdvaLNHKKOHESOOETGOIKHGIIGGQMCDQMADgMAAAEAAAAAAA"
+   },
+   "corner@C989": {
+    "kind": "corner",
+    "address": "$C989",
+    "cols": 3,
+    "lines": 32,
+    "header": 0,
+    "attribute": 70,
+    "bitmap": "AAAAAAAIYAAQsAQgvcQgnnQgTzpgZ41gZ+/AT/fA35PAv4PA/4PB5wOBeAGBf8GCf+GCf/GCP/iCP4AEO4AEPAAIH+AQH/4QD/wgB/ggA8BAAYeAAFgAAGAAAEAAAAAA"
+   },
+   "corner@BD4D": {
+    "kind": "corner",
+    "address": "$BD4D",
+    "cols": 3,
+    "lines": 32,
+    "header": 0,
+    "attribute": 70,
+    "bitmap": "5Ep55Hp5wEh5wMh5Y8h9Y8h9N4h9Fww9FgwdDhxMDjxMHzhMHzhEPzjEPxjEfRgUfRGIPBGIPBPIfBzMeBPNOEvNfEONfkMNfEMNeMaNOIOMGIOECYHECYHEC4CABwAA"
+   },
+   "corner@C8C9": {
+    "kind": "corner",
+    "address": "$C8C9",
+    "cols": 3,
+    "lines": 32,
+    "header": 0,
+    "attribute": 70,
+    "bitmap": "AAAACAPgDAPADgOIDwuIHwkIHwkcHwkcDxk+j5k+jhx8hhx4xh48Rw4+Ro8+ZiceZicMZxMMZtMEZhOEYiOEccfEeAeMPA+MPgcOfAcOfA1Gfg0kPwkkHwkmHwkjDwkB"
+   },
+   "corner@C9E9": {
+    "kind": "corner",
+    "address": "$C9E9",
+    "cols": 3,
+    "lines": 32,
+    "header": 0,
+    "attribute": 70,
+    "bitmap": "AAAAIAAAIAAAMIggEIwgCIxgCIRgQcRgQ8bgQ8fAT4fI74/Q7xeR7xeJZ5fCa5fia9fyK5fkM5eEM9eEM5fEM6fIE6fIAaPIAaPoAaOIAMPIAAOIAAHoAADwAAAAAAAA"
+   },
+   "corner@BDF7": {
+    "kind": "corner",
+    "address": "$BDF7",
+    "cols": 3,
+    "lines": 32,
+    "header": 0,
+    "attribute": 70,
+    "bitmap": "G0p5E0h5G0h5Cch5Cch9CIh9GIh9Egw9EgwdNhxMJDxMLDhMaDhEeDjEeBjE8RiE8RGI4RGIYRPIYRPMIeB4I+B8E+Q8F8Q8F8ScD8icH8iMH4hOH4hGH4hCD4iCB4CB"
+   },
+   "corner@CA49": {
+    "kind": "corner",
+    "address": "$CA49",
+    "cols": 3,
+    "lines": 32,
+    "header": 0,
+    "attribute": 70,
+    "bitmap": "AAAABAkQBouQB480I49eI55eIy5ecSxccy9ccy9ZcS9Z4SxZ8E6Z+EyaeE6cfH6cfkZ4cEaMcEaIcEUIeEcIfIYIcIAIeIAIfoAANoAAGQAADQAADgAABgAAAAAAAAAA"
+   },
+   "corner@BEA1": {
+    "kind": "corner",
+    "address": "$BEA1",
+    "cols": 3,
+    "lines": 32,
+    "header": 0,
+    "attribute": 70,
+    "bitmap": "fOEOPOEMHPQcGOQcMMw8MMw4EYz4E4zoE4z8Ccz8CMz8CM74DM7+CIZ8CIZ4GEd8HEM8HEsYMEmYeE2IeQ2IeQyIcRzI4TzIYXjJc/jCM/CSM+CRF8SBF8SRB4SJB4kJ"
+   },
+   "corner@CAA9": {
+    "kind": "corner",
+    "address": "$CAA9",
+    "cols": 3,
+    "lines": 32,
+    "header": 0,
+    "attribute": 70,
+    "bitmap": "AAAAMRAAMbggMPBgYPDIwfDIg+DOm+SOJ8WcQ8WcQ5WcQ5X8g7XbAzWaAz+aA1W6AVWaAVWaAVWaAVUaARASARAMARAAAxgAAwAAA0AAA0AAAYAAAAAAAAAAAAAAAAAA"
+   },
+   "corner@BF4B": {
+    "kind": "corner",
+    "address": "$BF4B",
+    "cols": 3,
+    "lines": 32,
+    "header": 0,
+    "attribute": 70,
+    "bitmap": "PHjENjnEdznEMzDsIzDMIzhMMxhcexwcOxw8Ewg8Awh4Aih4BinwCiDwCDPgCDHwCnnwCnnwBTz4ATzwAjzgAjjgBzxADnx8Hnh4HPx4HP5wPnwgHnggHzgwHzgQDxgQ"
+   },
+   "wall@BD03": {
+    "kind": "wall",
+    "address": "$BD03",
+    "cols": 3,
+    "lines": 56,
+    "header": 2,
+    "attribute": 70,
+    "bitmap": "DwkBDwkFBwkFBwkFBxMNBxMNDwMYDwcYD4eYD8+YH8+cH8+cHw8cPg8cPw8cPw8MHgcMHgYEHgYGLhYWLBYSLBISZFIyZFI45Ep55Hp5wEh5wMh5Y8h9Y8h9N4h9Fww9FgwdDhxMDjxMHzhMHzhEPzjEPxjEfRgUfRGIPBGIPBPIfBzMeBPNOEvNfEONfkMNfEMNeMaNOIOMGIOECYHECYHEC4CABwAA"
+   },
+   "wall@BDAD": {
+    "kind": "wall",
+    "address": "$BDAD",
+    "cols": 3,
+    "lines": 56,
+    "header": 2,
+    "attribute": 70,
+    "bitmap": "BwkBFwkFFwkFFwkFE5MNM5MMM4MYMYcYOYeYeM+YfM+cfM+cdA8cdA8cdA8cZA8MIQcMIQYEMQYGERYWEBYSGRISCVIyC1I4G0p5E0h5G0h5Cch5Cch9CIh9GIh9Egw9EgwdNhxMJDxMLDhMaDhEeDjEeBjE8RiE8RGI4RGIYRPIYRPMIeB4I+B8E+Q8F8Q8F8ScD8icH8iMH4hOH4hGH4hCD4iCB4CB"
+   },
+   "wall@BE57": {
+    "kind": "wall",
+    "address": "$BE57",
+    "cols": 3,
+    "lines": 56,
+    "header": 2,
+    "attribute": 70,
+    "bitmap": "DwQGPgRGfgxC/BwifBwKPAwJHgYRHwIRDwIRDwYRHw4SHh4SHhwgHzwgPxwoPxwoHz4MDxwMDh4MHE4MPE4YfEc8cEMceMMcfOEOPOEMHPQcGOQcMMw8MMw4EYz4E4zoE4z8Ccz8CMz8CM74DM7+CIZ8CIZ4GEd8HEM8HEsYMEmYeE2IeQ2IeQyIcRzI4TzIYXjJc/jCM/CSM+CRF8SBF8SRB4SJB4kJ"
+   },
+   "wall@BF01": {
+    "kind": "wall",
+    "address": "$BF01",
+    "cols": 3,
+    "lines": 56,
+    "header": 2,
+    "attribute": 70,
+    "bitmap": "DwEADwGAB4PIB8PIB8fIB8eIB42MDwmMDwEcDwEeHyPGHyPGDjHmDjHkDHPkDHvkCPPEGOPEGePgE/HgEfngEPjEFPDEPHiEPHjENjnEdznEMzDsIzDMIzhMMxhcexwcOxw8Ewg8Awh4Aih4BinwCiDwCDPgCDHwCnnwCnnwBTz4ATzwAjzgAjjgBzxADnx8Hnh4HPx4HP5wPnwgHnggHzgwHzgQDxgQ"
+   },
+   "corner@B87B": {
+    "kind": "corner",
+    "address": "$B87B",
+    "cols": 3,
+    "lines": 32,
+    "header": 0,
+    "attribute": 70,
+    "bitmap": "AAAAAAAHAAA/AcD/A+/nD/8fH/B9P+T3Pwn3PhH3HjPrHzPbHzO/DLm7CDn3HDnvPHnvPvnfHnPfDHO2DGO/BGe/MuPbcOHf8PPf8fH++Pnf/Hi/+ni2eBi/PBj9Dgl9"
+   },
+   "corner@CB09": {
+    "kind": "corner",
+    "address": "$CB09",
+    "cols": 3,
+    "lines": 32,
+    "header": 0,
+    "attribute": 70,
+    "bitmap": "FgD4/xf/9x//97/P+5/P+5///5n//9n//9///9///9/8/t/8/8/f/+///+7//e///4f//yf//nf//vf//fc/+/c/+/f/9/ff//f///f/////////z//nz7/n////////"
+   },
+   "corner@BD05": {
+    "kind": "corner",
+    "address": "$BD05",
+    "cols": 3,
+    "lines": 32,
+    "header": 0,
+    "attribute": 70,
+    "bitmap": "DwkBDwkFBwkFBwkFBxMNBxMNDwMYDwcYD4eYD8+YH8+cH8+cHw8cPg8cPw8cPw8MHgcMHgYEHgYGLhYWLBYSLBISZFIyZFI45Ep55Hp5wEh5wMh5Y8h9Y8h9N4h9Fww9"
+   },
+   "corner@C809": {
+    "kind": "corner",
+    "address": "$C809",
+    "cols": 3,
+    "lines": 32,
+    "header": 0,
+    "attribute": 70,
+    "bitmap": "jwkFzwkN35mc35mc35ue35vev7rb/7rfz9vfz9///7f//7///7///7/5/7/5//w///Af9+bP/8bH/4AH/wAH/wQH/gQH/AYP/E8f/H4//vg//vH/n+f/n+fv////////"
+   },
+   "corner@CB69": {
+    "kind": "corner",
+    "address": "$CB69",
+    "cols": 3,
+    "lines": 32,
+    "header": 0,
+    "attribute": 70,
+    "bitmap": "AAMG/NvP/P/P/P/P/PzP/fzP/f/P/f/v/f/v/f/vzdvvzdvv+9/n++/3++/7+6/5/6/8/8f8/+f+//v+//v+9/nv//3///v///v///f/z+//z+///9/////5//v5////"
+   },
+   "corner@BDAF": {
+    "kind": "corner",
+    "address": "$BDAF",
+    "cols": 3,
+    "lines": 32,
+    "header": 0,
+    "attribute": 70,
+    "bitmap": "BwkBFwkFFwkFFwkFE5MNM5MMM4MYMYcYOYeYeM+YfM+cfM+cdA8cdA8cdA8cZA8MIQcMIQYEMQYGERYWEBYSGRISCVIyC1I4G0p5E0h5G0h5Cch5Cch9CIh9GIh9Egw9"
+   },
+   "corner@CBC9": {
+    "kind": "corner",
+    "address": "$CBC9",
+    "cols": 3,
+    "lines": 32,
+    "header": 0,
+    "attribute": 70,
+    "bitmap": "HgNgPwf5/+//8+//8+/z/+vz//3//9///9/f/9/f4//f9//bw8/f98/fwP+f+/8/wP7/+/3/wDv//fvPwD/P/////+//////////7/vn///n/+f//+f//+f/////////"
+   },
+   "corner@BE59": {
+    "kind": "corner",
+    "address": "$BE59",
+    "cols": 3,
+    "lines": 32,
+    "header": 0,
+    "attribute": 70,
+    "bitmap": "DwQGPgRGfgxC/BwifBwKPAwJHgYRHwIRDwIRDwYRHw4SHh4SHhwgHzwgPxwoPxwoHz4MDxwMDh4MHE4MPE4YfEc8cEMceMMcfOEOPOEMHPQcGOQcMMw8MMw4EYz4E4zo"
+   },
+   "corner@CC29": {
+    "kind": "corner",
+    "address": "$CC29",
+    "cols": 3,
+    "lines": 32,
+    "header": 0,
+    "attribute": 70,
+    "bitmap": "wMOH4ef/8/7/8+f/8+//+9/n+9/n+9//+7///9/f8//f8///////f+///+f3/6Z//+x//sT///6f/+CP/+Aff/F////H93mH/nCP//C///n/89//m8/vn///////////"
+   },
+   "corner@BF03": {
+    "kind": "corner",
+    "address": "$BF03",
+    "cols": 3,
+    "lines": 32,
+    "header": 0,
+    "attribute": 70,
+    "bitmap": "DwEADwGAB4PIB8PIB8fIB8eIB42MDwmMDwEcDwEeHyPGHyPGDjHmDjHkDHPkDHvkCPPEGOPEGePgE/HgEfngEPjEFPDEPHiEPHjENjnEdznEMzDsIzDMIzhMMxhcexwc"
+   },
+   "strip@B8DB": {
+    "kind": "strip",
+    "address": "$B8DB",
+    "cols": 2,
+    "lines": 32,
+    "header": 2,
+    "attribute": 70,
+    "bitmap": "Pgx/H/+//7//v/On4afhv/P/////z7////f/4+fx5+X/z/+f/z/3f/z/yf3D7+H//P////////P/88//7////w=="
+   },
+   "strip@B91D": {
+    "kind": "strip",
+    "address": "$B91D",
+    "cols": 2,
+    "lines": 32,
+    "header": 2,
+    "attribute": 70,
+    "bitmap": "gcHD88f/7f/v5+fv7//P/+f/5//38/Zz9n///7///h/4H/Af8D8ez+IH4sPiI/HD8Af4B/wP9/////////n//w=="
+   },
+   "strip@B95F": {
+    "kind": "strip",
+    "address": "$B95F",
+    "cols": 2,
+    "lines": 32,
+    "header": 2,
+    "attribute": 70,
+    "bitmap": "QMfF79/v3+/f67PRv9N/3///////z/fv/////Pf/vn/////3/+L/59/////4H+AfwA/MD82PwY/mD2Af6j///w=="
+   },
+   "strip@B9A1": {
+    "kind": "strip",
+    "address": "$B9A1",
+    "cols": 2,
+    "lines": 32,
+    "header": 2,
+    "attribute": 70,
+    "bitmap": "YAz+Xux/5n/+e/w/8z/+f/Z/5v38f/5n/s/2f/5//n//P5+cn5//n/+//9//3+/////////v++//z7/f/////w=="
+   },
+   "strip@B9E3": {
+    "kind": "strip",
+    "address": "$B9E3",
+    "cols": 2,
+    "lines": 32,
+    "header": 2,
+    "attribute": 70,
+    "bitmap": "cHv7/7////v7///f/8//////5//n+//3/0f+r/2t5q/jr+m/4P/0d//j/+O////////+//z/fPf//////////w=="
+   },
+   "strip@BA25": {
+    "kind": "strip",
+    "address": "$BA25",
+    "cols": 2,
+    "lines": 32,
+    "header": 2,
+    "attribute": 70,
+    "bitmap": "vAb/3//f/N/83//f39//3//f/5//r/uv/6//d9/3/vf9//v//7///8//z/P/8//////f/////3///v///////w=="
+   },
+   "strip@BA67": {
+    "kind": "strip",
+    "address": "$BA67",
+    "cols": 2,
+    "lines": 32,
+    "header": 2,
+    "attribute": 70,
+    "bitmap": "KANgB+AP7//v/+8//z//4/7D/82fyZ/B/+P4/+F//D/8P/4f/B//D/5v+G/4D/gP/A/+P///3///P/8//////w=="
+   },
+   "strip@BAA9": {
+    "kind": "strip",
+    "address": "$BAA9",
+    "cols": 2,
+    "lines": 32,
+    "header": 2,
+    "attribute": 70,
+    "bitmap": "sfD59vv383fz77fv9+/37+//5vn8+f/////f///79///////////P/8//z//////3///////////5//n/////w=="
+   },
+   "corner@B81B": {
+    "kind": "corner",
+    "address": "$B81B",
+    "cols": 3,
+    "lines": 32,
+    "header": 0,
+    "attribute": 70,
+    "bitmap": "jwAA/94AzMeA/AHA8gDg0BHw2Ahw7URg7iTg7ybAdyZw96bAd8ZA/85I984s35wc35wO3x4m3z4mvB8u+B9M+Q9M8Q8csQ8c0z440h440h540jw48jhw8zjw8TDw4THg"
+   },
+   "corner@BFAD": {
+    "kind": "corner",
+    "address": "$BFAD",
+    "cols": 3,
+    "lines": 32,
+    "header": 0,
+    "attribute": 70,
+    "bitmap": "gQHgQRHwQhH4YhH4chH4MRP4ORPwOSPoPCPoPCfIPgfEHgeEHkeGHkOHPkOPfEGPeEEeeEEecEMWcEI0MEIkMMZsMMRIMORIIOQYoPEQoHiQoHyQoHzYJDzIBBzYJDjQ"
+   },
+   "corner@C869": {
+    "kind": "corner",
+    "address": "$C869",
+    "cols": 3,
+    "lines": 32,
+    "header": 0,
+    "attribute": 70,
+    "bitmap": "ZGD6ZmD7dnD7NnHz31H331Hn31nPn2nPf2nPf63nf63n/+33+f3/kP3/gP//g8//wf/78f/b8P/f+Pf/+H//+H+f/H+f/D//nD//nj///gf//wP//gP+7if//zf///7/"
+   },
+   "corner@C057": {
+    "kind": "corner",
+    "address": "$C057",
+    "cols": 3,
+    "lines": 32,
+    "header": 0,
+    "attribute": 70,
+    "bitmap": "AADgAQHQI4GQI4GQIcEYMcEcscMesMI+sMJ+scI+s9Ies8geM8g+E8g8EYg8EYg3IRi+Ixj8Ixz8Ihz4Mhz4MjxwMjhwuDBovDDovhHsvhHkvhPGnhMDnhIDnlInnlIn"
+   },
+   "corner@C101": {
+    "kind": "corner",
+    "address": "$C101",
+    "cols": 3,
+    "lines": 32,
+    "header": 0,
+    "attribute": 70,
+    "bitmap": "CBjwCBz4DBz4BB54BD58Dn84Hj84Hh54Pj5wAjzgBxxABzxADzyAHzygD55QD55QD4wQB8wQB8wQDwRQD5RgHhRAHhDAPBDIPDjcODneOhjMMhzEMwzENwzMI5zuI5xs"
+   },
+   "corner@C1AE": {
+    "kind": "corner",
+    "address": "$C1AE",
+    "cols": 3,
+    "lines": 32,
+    "header": 0,
+    "attribute": 70,
+    "bitmap": "kJHgkSHgmCPokSPoiQfASQ/AQx+Okx6GEzyHEziOETCeEbCTEbIeGZIMGNI4PMI4PuIYHgBhED5hEH9zMB9zED8zED8zkD8xyB4xyB8xiBwzDDwzDDgnGDivODCHPHCH"
+   },
+   "wall@BFAB": {
+    "kind": "wall",
+    "address": "$BFAB",
+    "cols": 3,
+    "lines": 56,
+    "header": 2,
+    "attribute": 70,
+    "bitmap": "gQHgQRHwQhH4YhH4chH4MRP4ORPwOSPoPCPoPCfIPgfEHgeEHkeGHkOHPkOPfEGPeEEeeEEecEMWcEI0MEIkMMZsMMRIMORIIOQYoPEQoHiQoHyQoHzYJDzIBBzYJDjQBDiQFDgYFHgBJHCIBDCMBiCERiCEZyEmN6EuP8Eun+Eun+M+z+M+x+Mewx6cx8GMj8HMh8PMo8PIIcvoI4voI4voQ5HoARHg"
+   },
+   "wall@C055": {
+    "kind": "wall",
+    "address": "$C055",
+    "cols": 3,
+    "lines": 56,
+    "header": 2,
+    "attribute": 70,
+    "bitmap": "AADgAQHQI4GQI4GQIcEYMcEcscMesMI+sMJ+scI+s9Ies8geM8g+E8g8EYg8EYg3IRi+Ixj8Ixz8Ihz4Mhz4MjxwMjhwuDBovDDovhHsvhHkvhPGnhMDnhIDnlInnlInHEomTEomSEg0SGg0aGh0YGB4IGB4MOB4MPD8OPD8OPB8OPD4OfP4OfP4GfPwGeHwGOHwGMHgMMngsMngoJDgoJDgoJDwgJDw"
+   },
+   "wall@C0FF": {
+    "kind": "wall",
+    "address": "$C0FF",
+    "cols": 3,
+    "lines": 56,
+    "header": 2,
+    "attribute": 70,
+    "bitmap": "CBjwCBz4DBz4BB54BD58Dn84Hj84Hh54Pj5wAjzgBxxABzxADzyAHzygD55QD55QD4wQB8wQB8wQDwRQD5RgHhRAHhDAPBDIPDjcODneOhjMMhzEMwzENwzMI5zuI5xsIx48IR48Iw8oIx8IB5+IB4/IB8eYI8cYI88QJ94wJ84wJ4xwZ4xwY8T4Y8T4cYDwMYDwMZDwMbHgEePgE+PgE8PgE8HgAYDw"
+   },
+   "wall@C1AC": {
+    "kind": "wall",
+    "address": "$C1AC",
+    "cols": 3,
+    "lines": 56,
+    "header": 2,
+    "attribute": 70,
+    "bitmap": "kJHgkSHgmCPokSPoiQfASQ/AQx+Okx6GEzyHEziOETCeEbCTEbIeGZIMGNI4PMI4PuIYHgBhED5hEH9zMB9zED8zED8zkD8xyB4xyB8xiBwzDDwzDDgnGDivODCHPHCHPjjDHjjCDjziPhhyPDByODB4cDA48DB8+BQ4/BQ4/AQ8+AQ4eEh4eEhw+Ihg8IhA8IhA+IhgeJAwPFA4PkQ4P0IwfmIgfGIg"
+   },
+   "corner@C257": {
+    "kind": "corner",
+    "address": "$C257",
+    "cols": 3,
+    "lines": 32,
+    "header": 0,
+    "attribute": 70,
+    "bitmap": "kzHwuzDwuTj4OTj4uTxsOTxsFRj2Exj8E5gWEZA+MZI8MZJ8oZT4q4SYq4YQi44gzp8QzpcQzpcQ09OQ05eQ06eQUZGgU9CgU9GgY6GQQSGQAUBgAUCgAYDAAIBAAIAA"
+   },
+   "corner@BFF5": {
+    "kind": "corner",
+    "address": "$BFF5",
+    "cols": 3,
+    "lines": 32,
+    "header": 0,
+    "attribute": 70,
+    "bitmap": "IOQYoPEQoHiQoHyQoHzYJDzIBBzYJDjQBDiQFDgYFHgBJHCIBDCMBiCERiCEZyEmN6EuP8Eun+Eun+M+z+M+x+Mewx6cx8GMj8HMh8PMo8PIIcvoI4voI4voQ5HoARHg"
+   },
+   "corner@C929": {
+    "kind": "corner",
+    "address": "$C929",
+    "cols": 3,
+    "lines": 32,
+    "header": 0,
+    "attribute": 70,
+    "bitmap": "AAAAAAACBAAwBAAQBBEYCBEMCBEOHDEOHGEePGGcPOGYPOCQPeCQPeHBPcHBGcHCGYHCCIHECIOECMOIGcMIGeMIOeOIPePIvOHInOGInMHIycGISYDIyYCIaQCQ0QBg"
+   },
+   "corner@C09F": {
+    "kind": "corner",
+    "address": "$C09F",
+    "cols": 3,
+    "lines": 32,
+    "header": 0,
+    "attribute": 70,
+    "bitmap": "vDDovhHsvhHkvhPGnhMDnhIDnlInnlInHEomTEomSEg0SGg0aGh0YGB4IGB4MOB4MPD8OPD8OPB8OPD4OfP4OfP4GfPwGeHwGOHwGMHgMMngsMngoJDgoJDgoJDwgJDw"
+   },
+   "corner@C149": {
+    "kind": "corner",
+    "address": "$C149",
+    "cols": 3,
+    "lines": 32,
+    "header": 0,
+    "attribute": 70,
+    "bitmap": "PDjcODneOhjMMhzEMwzENwzMI5zuI5xsIx48IR48Iw8oIx8IB5+IB4/IB8eYI8cYI88QJ94wJ84wJ4xwZ4xwY8T4Y8T4cYDwMYDwMZDwMbHgEePgE+PgE8PgE8HgAYDw"
+   },
+   "corner@C1F7": {
+    "kind": "corner",
+    "address": "$C1F7",
+    "cols": 3,
+    "lines": 32,
+    "header": 0,
+    "attribute": 70,
+    "bitmap": "HjHIHzGIHDMMPDMMOCcYOK84MIc8cIc+OMMeOMIOPOI+GHI8MHI4MHhwMDjwMHz4FDj8FDj8BDz4BDh4SHh4SHD4iGDwiEDwiED4iGB4kDA8UDg+RDg/QjB+YiB8YiDw"
+   }
+  }
+ }
+}

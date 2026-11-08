@@ -1,0 +1,29 @@
+{
+  "note": "M1: p\u00f3zy vyta\u017een\u00e9 z b\u011bhu origin\u00e1lu (tools/mksprite.py); \u00faplnou sadu p\u00f3z zm\u011b\u0159\u00ed M3.",
+  "sabreman": {
+    "frames": {
+      "stand": {
+        "cols": 2,
+        "rows": 3,
+        "width": 16,
+        "height": 24,
+        "source": "diff00280.scr",
+        "sourceCol": 8,
+        "sourceRow": 17,
+        "bitmap": "AAAAAAPABOAJ8ABwP/gAABvwP+ADwA8gAHACcAcwBzAEMARgA+ADwAAAAcADwAfA",
+        "attributes": "R0dHR0dH"
+      },
+      "panelIcon": {
+        "cols": 1,
+        "rows": 2,
+        "width": 8,
+        "height": 16,
+        "source": "diff00280.scr",
+        "sourceCol": 28,
+        "sourceRow": 0,
+        "bitmap": "FC4uLhRvX19fXxwcFBQ2dw==",
+        "attributes": "R0c="
+      }
+    }
+  }
+}
